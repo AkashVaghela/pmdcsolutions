@@ -19,11 +19,11 @@ export default function Home() {
           <nav id="navmenu" className="navmenu">
             <ul>
               <li><a href="#hero" className="active">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#team">Team</a></li>
-              <li className="dropdown"><a href="#"><span>Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li><a href="#about">Services</a></li>
+              <li><a href="#services">Portfolio</a></li>
+              <li><a href="#portfolio">Careers</a></li>
+              <li><a href="#team">About Us</a></li>
+              {/* <li className="dropdown"><a href="#"><span>Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Dropdown 1</a></li>
                   <li className="dropdown"><a href="#"><span>Deep Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -39,13 +39,14 @@ export default function Home() {
                   <li><a href="#">Dropdown 3</a></li>
                   <li><a href="#">Dropdown 4</a></li>
                 </ul>
-              </li>
+              </li> */}
+              <li><a href="#contact">Blog</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
             <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
 
-          <a className="btn-getstarted" href="#about">Get Started</a>
+          <a className="btn-getstarted" href="#about">Book Free Discovery Call</a>
 
         </div>
       </header>
@@ -62,15 +63,13 @@ export default function Home() {
                   </div>
 
                   <div className="main-heading">
-                    <h1>CREATIVE <br />DESIGN</h1>
+                    <h1>Transforming Ideas<br />Into Digital Reality</h1>
                   </div>
 
                   <div className="divider"></div>
 
                   <div className="description">
-                    <p>Discover innovative strategies for impactful visual communication. We transform ideas into compelling
-                      realities, ensuring your brand stands out in a crowded marketplace. Our dedicated team leverages
-                      cutting-edge techniques to deliver exceptional results that resonate with your audience.</p>
+                    <p>At PMDC, we specialize in building high-performance web and mobile applications that empower businesses, startups, and individuals. With a strong focus on scalability, security, and user experience, our solutions are designed to accelerate growth and establish lasting digital credibility.</p>
                   </div>
 
                   <div className="cta-button">
@@ -90,10 +89,10 @@ export default function Home() {
 
                   <div className="stats-card">
                     <div className="stats-number">
-                      <h2>5K</h2>
+                      <h2>50+</h2>
                     </div>
                     <div className="stats-label">
-                      <p>Successful Campaigns</p>
+                      <p>Projects Delivered</p>
                     </div>
                     <div className="stats-arrow">
                       <a href="#portfolio"><i className="bi bi-arrow-up-right"></i></a>
@@ -157,7 +156,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="testimonial-section mt-5 pt-5" data-aos="fade-up" data-aos-delay="100">
+            {/* <div className="testimonial-section mt-5 pt-5" data-aos="fade-up" data-aos-delay="100">
               <div className="row">
                 <div className="col-lg-4" data-aos="fade-right" data-aos-delay="200">
                   <div className="testimonial-intro">
@@ -173,7 +172,7 @@ export default function Home() {
 
                 <div className="col-lg-8" data-aos="fade-left" data-aos-delay="300">
                   <div className="testimonial-slider swiper init-swiper">
-                    {/* <script type="application/json" className="swiper-config">
+                    <script type="application/json" className="swiper-config">
                       {
                         "loop": true,
                         "speed": 800,
@@ -192,7 +191,7 @@ export default function Home() {
                           }
                         }
                       }
-                    </script> */}
+                    </script>
                     <div className="swiper-wrapper">
                       <div className="swiper-slide">
                         <div className="testimonial-item">
@@ -282,7 +281,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
 
@@ -302,16 +301,15 @@ export default function Home() {
                 <div className="col-lg-8 col-md-12">
                   <div className="service-intro">
                     <h2 className="service-heading">
-                      <div>Innovative business</div>
-                      <div><span>performance solutions</span></div>
+                      <div>Building Digital Solutions </div>
+                      <div><span>That Drive Growth</span></div>
                     </h2>
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-12">
                   <div className="service-summary">
                     <p>
-                      We integrate forward-thinking strategies, creative approaches, and state-of-the-art technologies to
-                      deliver exceptional customer experiences that drive growth and engage target markets.
+                      At PMDC, we design and develop scalable, secure, and user-friendly web and mobile solutions tailored to your business needs. From startups to established enterprises, our services help clients build strong digital foundations, accelerate growth, and stay competitive.
                     </p>
                     <Link href="/service-details" className="service-btn">
                       View All Services
@@ -334,12 +332,11 @@ export default function Home() {
                   </a>
                   <h3>
                     <a href="service-details.html">
-                      Creative <span>branding</span>
+                      UI/UX <span>Design</span>
                     </a>
                   </h3>
                   <p>
-                    Nulla facilisi. Maecenas eget magna neque. Suspendisse potenti. Curabitur eleifend nisi non magna
-                    vulputate, vel condimentum libero tempus. Proin consectetur feugiat diam.
+                    Intuitive, modern, and user-focused interfaces that boost engagement and create seamless digital experiences.
                   </p>
                 </div>
               </div>
@@ -354,12 +351,11 @@ export default function Home() {
                   </a>
                   <h3>
                     <a href="service-details.html">
-                      Design <span>systems</span>
+                      Web <span>Development</span>
                     </a>
                   </h3>
                   <p>
-                    Praesent euismod varius tellus, vel bibendum nunc interdum at. Donec vehicula diam vel metus venenatis
-                    convallis. Aliquam erat volutpat. Etiam viverra magna sit amet.
+                    Responsive, SEO-optimized websites and web apps built for speed, scalability, and performance.
                   </p>
                 </div>
               </div>
@@ -374,12 +370,11 @@ export default function Home() {
                   </a>
                   <h3>
                     <a href="service-details.html">
-                      Marketing <span>strategies</span>
+                      Mobile <span>Development</span>
                     </a>
                   </h3>
                   <p>
-                    Vivamus tempor velit id magna dictum, sed fermentum nisi faucibus. Integer nec pretium sapien. Fusce
-                    tincidunt ligula et purus consequat, ac pellentesque nulla eleifend.
+                    Native and cross-platform apps for iOS and Android, delivering smooth performance and usability.
                   </p>
                 </div>
               </div>
@@ -394,12 +389,11 @@ export default function Home() {
                   </a>
                   <h3>
                     <a href="service-details.html">
-                      Digital <span>platforms</span>
+                      MVP <span>Development</span>
                     </a>
                   </h3>
                   <p>
-                    Cras fermentum odio eu feugiat malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et
-                    accumsan cursus. Morbi placerat nulla vel nunc viverra accumsan.
+                    Launch faster with lean, scalable MVPs designed to validate ideas and attract early customers or investors.
                   </p>
                 </div>
               </div>
@@ -414,12 +408,11 @@ export default function Home() {
                   </a>
                   <h3>
                     <a href="service-details.html">
-                      Growth <span>acceleration</span>
+                      Custom  <span>Solutions</span>
                     </a>
                   </h3>
                   <p>
-                    Aenean vel augue vel nisi bibendum posuere. Phasellus in lacus quis urna sodales dignissim. Duis aliquam
-                    libero eget risus facilisis. Quisque eget libero vel nisl fringilla.
+                    Tailored web and mobile solutions to automate workflows, solve complex problems, and fuel business growth.
                   </p>
                 </div>
               </div>
@@ -434,12 +427,11 @@ export default function Home() {
                   </a>
                   <h3>
                     <a href="service-details.html">
-                      Media <span>solutions</span>
+                      E-Commerce <span>Solutions</span>
                     </a>
                   </h3>
                   <p>
-                    Etiam efficitur lacus in diam finibus, nec ultrices est sagittis. Maecenas elementum magna sed risus
-                    faucibus, nec commodo purus facilisis. Vestibulum accumsan magna.
+                    We deliver powerful online stores with smooth navigation, secure payments, and customer-first shopping experiences.
                   </p>
                 </div>
               </div>
@@ -467,9 +459,8 @@ export default function Home() {
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 01</span>
-                    <h3>Initial Consultation</h3>
-                    <p>Conducting thorough discovery sessions to understand your business requirements and objectives. Our
-                      expert team analyzes your needs to create a customized approach.</p>
+                    <h3>Discovery &amp; Consultation</h3>
+                    <p>We start by understanding your vision, business goals, and challenges through a detailed consultation. This helps us identify the best digital approach for your project.</p>
                   </div>
                 </div>
               </div>
@@ -481,9 +472,8 @@ export default function Home() {
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 02</span>
-                    <h3>Planning &amp; Strategy</h3>
-                    <p>Developing comprehensive strategies and detailed project plans based on the initial consultation. We
-                      create actionable roadmaps with clear milestones and deliverables.</p>
+                    <h3>Planning &amp; Roadmap</h3>
+                    <p>Based on your requirements, we create a clear roadmap with timelines, deliverables, and technology choices. Every step is aligned with your business objectives.</p>
                   </div>
                 </div>
               </div>
@@ -495,9 +485,8 @@ export default function Home() {
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 03</span>
-                    <h3>Development Phase</h3>
-                    <p>Executing the planned strategies with precision and agility. Our team implements solutions while
-                      maintaining constant communication and progress updates.</p>
+                    <h3>Design &amp; Prototyping</h3>
+                    <p>Our team builds wireframes and UI/UX prototypes so you can visualize the final product early. This ensures alignment before development begins.</p>
                   </div>
                 </div>
               </div>
@@ -509,9 +498,34 @@ export default function Home() {
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 04</span>
-                    <h3>Launch &amp; Support</h3>
-                    <p>Ensuring smooth deployment and providing ongoing support for implemented solutions. We monitor
-                      performance and make necessary adjustments for optimal results.</p>
+                    <h3>Agile Development</h3>
+                    <p>We follow agile sprints to deliver functional modules quickly. You get regular updates, demos, and the flexibility to refine features during the process.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="step-item" data-aos="fade-right" data-aos-delay="400">
+                <div className="step-content">
+                  <div className="step-icon">
+                    <i className="bi bi-bar-chart"></i>
+                  </div>
+                  <div className="step-info">
+                    <span className="step-number">Step 05</span>
+                    <h3>Launch &amp; Quality Assurance</h3>
+                    <p>Before launch, we rigorously test for performance, security, and usability. Once approved, we deploy your solution seamlessly to production.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="step-item" data-aos="fade-left" data-aos-delay="500">
+                <div className="step-content">
+                  <div className="step-icon">
+                    <i className="bi bi-check2-circle"></i>
+                  </div>
+                  <div className="step-info">
+                    <span className="step-number">Step 06</span>
+                    <h3>Ongoing Support &amp; Growth</h3>
+                    <p>We don’t stop at launch. Our team provides continuous support, updates, and scaling strategies to help your product grow with your business.</p>
                   </div>
                 </div>
               </div>
@@ -522,7 +536,7 @@ export default function Home() {
 
         </section>
 
-        <section id="call-to-action" className="call-to-action section">
+        {/* <section id="call-to-action" className="call-to-action section">
 
           <div className="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -577,9 +591,9 @@ export default function Home() {
 
           </div>
 
-        </section>
+        </section> */}
 
-        <section id="testimonials" className="testimonials section light-background">
+        {/* <section id="testimonials" className="testimonials section light-background">
 
           <div className="container section-title" data-aos="fade-up">
             <h2>Testimonials</h2>
@@ -589,7 +603,7 @@ export default function Home() {
           <div className="container" data-aos="fade-up" data-aos-delay="100">
 
             <div className="testimonials-slider swiper init-swiper">
-              {/* <script type="application/json" className="swiper-config">
+              <script type="application/json" className="swiper-config">
                 {{
                   "slidesPerView": 1,
                   "loop": true,
@@ -602,7 +616,7 @@ export default function Home() {
                     "prevEl": ".swiper-button-prev"
                   }
                 }}
-              </script> */}
+              </script>
 
               <div className="swiper-wrapper">
 
@@ -745,7 +759,7 @@ export default function Home() {
 
           </div>
 
-        </section>
+        </section> */}
 
         <section id="portfolio" className="portfolio section">
 
@@ -766,14 +780,14 @@ export default function Home() {
                   <i className="bi bi-phone"></i> UI/UX
                 </li>
                 <li data-filter=".filter-development">
-                  <i className="bi bi-code-slash"></i> Development
+                  <i className="bi bi-code-slash"></i> Web Apps
                 </li>
                 <li data-filter=".filter-photography">
-                  <i className="bi bi-camera"></i> Photography
+                  <i className="bi bi-camera"></i> Mobile Apps
                 </li>
-                <li data-filter=".filter-marketing">
+                {/* <li data-filter=".filter-marketing">
                   <i className="bi bi-graph-up"></i> Marketing
-                </li>
+                </li> */}
               </ul>
 
               <div className="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
@@ -979,7 +993,7 @@ export default function Home() {
         </section>
 
 
-        <section id="team" className="team section light-background">
+        {/* <section id="team" className="team section light-background">
 
           <div className="container section-title" data-aos="fade-up">
             <h2>Team</h2>
@@ -1114,12 +1128,11 @@ export default function Home() {
 
           </div>
 
-        </section>
+        </section> */}
 
         {/* Pricing Section */}
-        <section id="pricing" className="pricing section">
+        {/* <section id="pricing" className="pricing section">
 
-          {/* Section Title */}
           <div className="container section-title" data-aos="fade-up">
             <h2>Pricing</h2>
             <div><span>Check Our</span> <span className="description-title">Pricing</span></div>
@@ -1128,7 +1141,6 @@ export default function Home() {
           <div className="container" data-aos="fade-up" data-aos-delay="100">
 
             <div className="row gy-4">
-              {/* <!-- Basic Plan --> */}
               <div className="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                 <div className="pricing-card">
                   <div className="plan-header">
@@ -1160,7 +1172,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Professional Plan */}
               <div className="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
                 <div className="pricing-card popular">
                   <div className="popular-tag">Most Popular</div>
@@ -1193,7 +1204,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* <!-- Enterprise Plan --> */}
               <div className="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
                 <div className="pricing-card">
                   <div className="plan-header">
@@ -1228,7 +1238,7 @@ export default function Home() {
 
           </div>
 
-        </section>
+        </section> */}
 
         {/* Faq Section */}
         <section className="faq-9 faq section" id="faq">
@@ -1238,8 +1248,8 @@ export default function Home() {
 
               <div className="col-lg-5" data-aos="fade-up">
                 <h2 className="faq-title">Have a question? Check out the FAQ</h2>
-                <p className="faq-description">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet
-                  adipiscing sem neque sed ipsum.</p>
+                <p className="faq-description">We’ve compiled answers to the most common questions about our web and mobile development services,
+                  so you can get clarity before starting your project.</p>
                 <div className="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
                   <svg className="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -1254,60 +1264,55 @@ export default function Home() {
                 <div className="faq-container">
 
                   <div className="faq-item faq-active">
-                    <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                    <h3>What services does PMDC provide?</h3>
                     <div className="faq-content">
-                      <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                        gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                      <p>We offer end-to-end digital solutions including UI/UX design, website and web app development,
+                        mobile app development, MVP/POC creation, and custom software tailored to your business needs.</p>
                     </div>
                     <i className="faq-toggle bi bi-chevron-right"></i>
                   </div>
 
                   <div className="faq-item">
-                    <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
+                    <h3>Do you work with startups and small businesses?</h3>
                     <div className="faq-content">
-                      <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet
-                        id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
-                        elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                      <p>Absolutely! We specialize in helping startups validate their ideas with MVPs and scalable solutions.
+                        Our flexible approach fits the budget and goals of early-stage businesses.</p>
                     </div>
                     <i className="faq-toggle bi bi-chevron-right"></i>
                   </div>
 
                   <div className="faq-item">
-                    <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                    <h3>How do you ensure quality and timely delivery?</h3>
                     <div className="faq-content">
-                      <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                        elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque
-                        eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis
-                        sed odio morbi quis</p>
+                      <p>Our process includes structured planning, agile development, and milestone-based delivery.
+                        Regular updates and transparent communication ensure your project stays on track.</p>
                     </div>
                     <i className="faq-toggle bi bi-chevron-right"></i>
                   </div>
 
                   <div className="faq-item">
-                    <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                    <h3>Can you handle ongoing support and maintenance?</h3>
                     <div className="faq-content">
-                      <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet
-                        id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
-                        elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                      <p> Yes, we provide post-launch support, regular updates, bug fixes, and feature enhancements
+                        to keep your website or app secure and future-ready.</p>
                     </div>
                     <i className="faq-toggle bi bi-chevron-right"></i>
                   </div>
 
                   <div className="faq-item">
-                    <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
+                    <h3>What technologies do you use?</h3>
                     <div className="faq-content">
-                      <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in.
-                        Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est.
-                        Purus gravida quis blandit turpis cursus in</p>
+                      <p>We use modern frameworks and tools including React, Next.js, Angular, Node.js, NestJS, Flutter,
+                        and cloud solutions (AWS/GCP) to build scalable, secure, and high-performing applications.</p>
                     </div>
                     <i className="faq-toggle bi bi-chevron-right"></i>
                   </div>
 
                   <div className="faq-item">
-                    <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
+                    <h3>How can I get started with PMDC?</h3>
                     <div className="faq-content">
-                      <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi.
-                        Distinctio ipsam dolore et.</p>
+                      <p>Simply reach out via our contact form or connect with us on Upwork or LinkedIn.
+                        We’ll schedule a consultation to discuss your goals and propose a tailored plan.</p>
                     </div>
                     <i className="faq-toggle bi bi-chevron-right"></i>
                   </div>
@@ -1454,9 +1459,11 @@ export default function Home() {
           <div className="row gy-4">
             <div className="col-lg-5 col-md-12 footer-about">
               <a href="index.html" className="logo d-flex align-items-center">
-                <span className="sitename">Strategy</span>
+                <span className="sitename">PMDC Solutions</span>
               </a>
-              <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+              <p>PMDC Solutions is a full-stack digital agency delivering modern web, mobile, and
+                custom software solutions. We help startups and enterprises turn ideas into
+                scalable products with robust technology and user-first design.</p>
               <div className="social-links d-flex mt-4">
                 <a href=""><i className="bi bi-twitter-x"></i></a>
                 <a href=""><i className="bi bi-facebook"></i></a>
