@@ -1,15 +1,35 @@
 "use client";
 
 import { useEffect } from 'react';
-import AOS from 'aos';
-import Isotope from 'isotope-layout';
-import GLightbox from 'glightbox';
-import Swiper from 'swiper';
-import imagesLoaded from 'imagesloaded';
 
 const ThemeInitializer = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // Dynamically import browser-only libs to avoid SSR/build-time eval issues
+      let AOS;
+      let Isotope;
+      let GLightbox;
+      let Swiper;
+      let imagesLoaded;
+
+      const loadBrowserLibs = async () => {
+        const [{ default: AOSMod }, { default: IsotopeMod }, { default: GLightboxMod }, { default: SwiperMod }, { default: imagesLoadedMod }] = await Promise.all([
+          import('aos'),
+          import('isotope-layout'),
+          import('glightbox'),
+          import('swiper'),
+          import('imagesloaded')
+        ]);
+        AOS = AOSMod;
+        Isotope = IsotopeMod;
+        GLightbox = GLightboxMod;
+        Swiper = SwiperMod;
+        imagesLoaded = imagesLoadedMod;
+
+        initialize();
+      };
+
+      const initialize = () => {
       /**
        * Apply .scrolled class to the body as the page is scrolled down
        */
@@ -95,7 +115,7 @@ const ThemeInitializer = () => {
        * Animation on scroll function and init
        */
       const aosInit = () => {
-        AOS.init({
+        AOS?.init({
           duration: 600,
           easing: 'ease-in-out',
           once: true,
@@ -112,7 +132,9 @@ const ThemeInitializer = () => {
           let config = JSON.parse(
             swiperElement.querySelector(".swiper-config").innerHTML.trim()
           );
-          new Swiper(swiperElement, config);
+          if (Swiper) {
+            new Swiper(swiperElement, config);
+          }
         });
       }
       window.addEventListener("load", initSwiper);
@@ -120,9 +142,11 @@ const ThemeInitializer = () => {
       /**
        * Initiate glightbox
        */
-      GLightbox({
-        selector: '.glightbox'
-      });
+      if (GLightbox) {
+        GLightbox({
+          selector: '.glightbox'
+        });
+      }
 
       /**
        * Init isotope layout and filters
@@ -133,20 +157,24 @@ const ThemeInitializer = () => {
         let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
         let initIsotope;
 
-        imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-          initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-            itemSelector: '.isotope-item',
-            layoutMode: layout,
-            filter: filter,
-            sortBy: sort
+        if (imagesLoaded) {
+          imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+            if (Isotope) {
+              initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+                itemSelector: '.isotope-item',
+                layoutMode: layout,
+                filter: filter,
+                sortBy: sort
+              });
+            }
           });
-        });
+        }
 
         isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
           filters.addEventListener('click', function() {
             isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
             this.classList.add('filter-active');
-            initIsotope.arrange({
+            initIsotope?.arrange({
               filter: this.getAttribute('data-filter')
             });
             if (typeof aosInit === 'function') {
@@ -218,6 +246,10 @@ const ThemeInitializer = () => {
         window.removeEventListener('load', navmenuScrollspy);
         document.removeEventListener('scroll', navmenuScrollspy);
       };
+      };
+
+      // Start once libs are loaded
+      loadBrowserLibs();
     }
   }, []);
 

@@ -1,9 +1,10 @@
 "use client";
 
 import Script from 'next/script';
-import ThemeInitializer from '@/components/ThemeInitializer';
+// import ThemeInitializer from '@/components/ThemeInitializer';
 import Link from 'next/link';
-
+import dynamic from 'next/dynamic';
+const ThemeInitializer = dynamic(() => import('@/components/ThemeInitializer'), { ssr: false });
 export default function Home() {
   return (
     <>
@@ -1522,7 +1523,7 @@ export default function Home() {
       <Script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
       <Script src="/assets/vendor/aos/aos.js" />
       <Script src="/assets/vendor/glightbox/js/glightbox.min.js" />
-      <Script src="/assets/vendor/purecounter/purecounter_vanilla.js" />
+      {/* <Script src="/assets/vendor/purecounter/purecounter_vanilla.js" /> */}
       <Script src="/assets/vendor/swiper/swiper-bundle.min.js" />
       <Script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" />
       <Script src="/assets/vendor/php-email-form/validate.js" />
