@@ -13,18 +13,14 @@ const ThemeInitializer = () => {
       let imagesLoaded;
 
       const loadBrowserLibs = async () => {
-        const [{ default: AOSMod }, { default: IsotopeMod }, { default: GLightboxMod }, { default: SwiperMod }, { default: imagesLoadedMod }] = await Promise.all([
+        const [{ default: AOSMod }, { default: GLightboxMod }, { default: SwiperMod }] = await Promise.all([
           import('aos'),
-          import('isotope-layout'),
           import('glightbox'),
-          import('swiper'),
-          import('imagesloaded')
+          import('swiper')
         ]);
         AOS = AOSMod;
-        Isotope = IsotopeMod;
         GLightbox = GLightboxMod;
         Swiper = SwiperMod;
-        imagesLoaded = imagesLoadedMod;
 
         initialize();
       };
@@ -79,15 +75,7 @@ const ThemeInitializer = () => {
         });
       });
 
-      /**
-       * Preloader
-       */
-      const preloader = document.querySelector('#preloader');
-      if (preloader) {
-        window.addEventListener('load', () => {
-          preloader.remove();
-        });
-      }
+      // Preloader is handled by React component now; no DOM removal here
 
       /**
        * Scroll top button
@@ -122,6 +110,8 @@ const ThemeInitializer = () => {
           mirror: false
         });
       }
+      // Initialize AOS immediately in case page has already loaded
+      aosInit();
       window.addEventListener('load', aosInit);
 
       /**
@@ -148,41 +138,7 @@ const ThemeInitializer = () => {
         });
       }
 
-      /**
-       * Init isotope layout and filters
-       */
-      document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-        let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-        let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-        let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-        let initIsotope;
-
-        if (imagesLoaded) {
-          imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-            if (Isotope) {
-              initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-                itemSelector: '.isotope-item',
-                layoutMode: layout,
-                filter: filter,
-                sortBy: sort
-              });
-            }
-          });
-        }
-
-        isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-          filters.addEventListener('click', function() {
-            isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-            this.classList.add('filter-active');
-            initIsotope?.arrange({
-              filter: this.getAttribute('data-filter')
-            });
-            if (typeof aosInit === 'function') {
-              aosInit();
-            }
-          }, false);
-        });
-      });
+      // Isotope removed in favor of React filtering in PortfolioGrid
 
       /**
        * Frequently Asked Questions Toggle

@@ -1,56 +1,17 @@
 "use client";
 
-import Script from 'next/script';
-// import ThemeInitializer from '@/components/ThemeInitializer';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import NavBar from '@/components/NavBar';
+import ScrollTop from '@/components/ScrollTop';
+import Preloader from '@/components/Preloader';
+import FaqAccordion from '@/components/FaqAccordion';
+import PortfolioGrid from '@/components/PortfolioGrid';
 const ThemeInitializer = dynamic(() => import('@/components/ThemeInitializer'), { ssr: false });
 export default function Home() {
   return (
     <>
-      <header id="header" className="header d-flex align-items-center fixed-top">
-        <div className="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-          <Link href="/" className="logo d-flex align-items-center me-auto me-xl-0">
-            {/* Uncomment the line below if you also wish to use an image logo */}
-            {/* <img src="assets/img/logo.webp" alt=""/> */}
-            <h1 className="sitename">PMDC</h1>
-          </Link>
-
-          <nav id="navmenu" className="navmenu">
-            <ul>
-              <li><a href="#hero" className="active">Home</a></li>
-              <li><a href="#about">Services</a></li>
-              <li><a href="#services">Portfolio</a></li>
-              <li><a href="#portfolio">Careers</a></li>
-              <li><a href="#team">About Us</a></li>
-              {/* <li className="dropdown"><a href="#"><span>Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Dropdown 1</a></li>
-                  <li className="dropdown"><a href="#"><span>Deep Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                      <li><a href="#">Deep Dropdown 1</a></li>
-                      <li><a href="#">Deep Dropdown 2</a></li>
-                      <li><a href="#">Deep Dropdown 3</a></li>
-                      <li><a href="#">Deep Dropdown 4</a></li>
-                      <li><a href="#">Deep Dropdown 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Dropdown 2</a></li>
-                  <li><a href="#">Dropdown 3</a></li>
-                  <li><a href="#">Dropdown 4</a></li>
-                </ul>
-              </li> */}
-              <li><a href="#contact">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-            <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
-          </nav>
-
-          <a className="btn-getstarted" href="#about">Book Free Discovery Call</a>
-
-        </div>
-      </header>
+      <NavBar />
 
       <main className="main">
 
@@ -773,219 +734,7 @@ export default function Home() {
 
             <div className="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-              <ul className="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-                <li data-filter="*" className="filter-active">
-                  <i className="bi bi-grid-3x3"></i> All Projects
-                </li>
-                <li data-filter=".filter-ui">
-                  <i className="bi bi-phone"></i> UI/UX
-                </li>
-                <li data-filter=".filter-development">
-                  <i className="bi bi-code-slash"></i> Web Apps
-                </li>
-                <li data-filter=".filter-photography">
-                  <i className="bi bi-camera"></i> Mobile Apps
-                </li>
-                {/* <li data-filter=".filter-marketing">
-                  <i className="bi bi-graph-up"></i> Marketing
-                </li> */}
-              </ul>
-
-              <div className="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-
-                <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
-                  <article className="portfolio-entry">
-                    <figure className="entry-image">
-                      <img src="assets/img/portfolio/portfolio-1.webp" className="img-fluid" alt="" loading="lazy" />
-                      <div className="entry-overlay">
-                        <div className="overlay-content">
-                          <div className="entry-meta">UI/UX Design</div>
-                          <h3 className="entry-title">Mobile Banking App</h3>
-                          <div className="entry-links">
-                            <a href="assets/img/portfolio/portfolio-1.webp" className="glightbox"
-                              data-gallery="portfolio-gallery-ui"
-                              data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
-                              <i className="bi bi-arrows-angle-expand"></i>
-                            </a>
-                            <a href="portfolio-details.html">
-                              <i className="bi bi-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  </article>
-                </div>
-
-                <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-                  <article className="portfolio-entry">
-                    <figure className="entry-image">
-                      <img src="assets/img/portfolio/portfolio-10.webp" className="img-fluid" alt="" loading="lazy" />
-                      <div className="entry-overlay">
-                        <div className="overlay-content">
-                          <div className="entry-meta">Development</div>
-                          <h3 className="entry-title">E-Learning Platform</h3>
-                          <div className="entry-links">
-                            <a href="assets/img/portfolio/portfolio-10.webp" className="glightbox"
-                              data-gallery="portfolio-gallery-development"
-                              data-glightbox="title: E-Learning Platform; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
-                              <i className="bi bi-arrows-angle-expand"></i>
-                            </a>
-                            <a href="portfolio-details.html">
-                              <i className="bi bi-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  </article>
-                </div>
-
-                <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
-                  <article className="portfolio-entry">
-                    <figure className="entry-image">
-                      <img src="assets/img/portfolio/portfolio-7.webp" className="img-fluid" alt="" loading="lazy" />
-                      <div className="entry-overlay">
-                        <div className="overlay-content">
-                          <div className="entry-meta">Photography</div>
-                          <h3 className="entry-title">Urban Architecture</h3>
-                          <div className="entry-links">
-                            <a href="assets/img/portfolio/portfolio-7.webp" className="glightbox"
-                              data-gallery="portfolio-gallery-photography"
-                              data-glightbox="title: Urban Architecture; description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.">
-                              <i className="bi bi-arrows-angle-expand"></i>
-                            </a>
-                            <a href="portfolio-details.html">
-                              <i className="bi bi-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  </article>
-                </div>
-
-                <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
-                  <article className="portfolio-entry">
-                    <figure className="entry-image">
-                      <img src="assets/img/portfolio/portfolio-4.webp" className="img-fluid" alt="" loading="lazy" />
-                      <div className="entry-overlay">
-                        <div className="overlay-content">
-                          <div className="entry-meta">Marketing</div>
-                          <h3 className="entry-title">Social Media Campaign</h3>
-                          <div className="entry-links">
-                            <a href="assets/img/portfolio/portfolio-4.webp" className="glightbox"
-                              data-gallery="portfolio-gallery-marketing"
-                              data-glightbox="title: Social Media Campaign; description: Quis autem vel eum iure reprehenderit qui in ea voluptate.">
-                              <i className="bi bi-arrows-angle-expand"></i>
-                            </a>
-                            <a href="portfolio-details.html">
-                              <i className="bi bi-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  </article>
-                </div>
-
-                <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
-                  <article className="portfolio-entry">
-                    <figure className="entry-image">
-                      <img src="assets/img/portfolio/portfolio-2.webp" className="img-fluid" alt="" loading="lazy" />
-                      <div className="entry-overlay">
-                        <div className="overlay-content">
-                          <div className="entry-meta">UI/UX Design</div>
-                          <h3 className="entry-title">Smart Home Interface</h3>
-                          <div className="entry-links">
-                            <a href="assets/img/portfolio/portfolio-2.webp" className="glightbox"
-                              data-gallery="portfolio-gallery-ui"
-                              data-glightbox="title: Smart Home Interface; description: At vero eos et accusamus et iusto odio dignissimos ducimus.">
-                              <i className="bi bi-arrows-angle-expand"></i>
-                            </a>
-                            <a href="portfolio-details.html">
-                              <i className="bi bi-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  </article>
-                </div>
-
-                <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-                  <article className="portfolio-entry">
-                    <figure className="entry-image">
-                      <img src="assets/img/portfolio/portfolio-11.webp" className="img-fluid" alt="" loading="lazy" />
-                      <div className="entry-overlay">
-                        <div className="overlay-content">
-                          <div className="entry-meta">Development</div>
-                          <h3 className="entry-title">Cloud Management System</h3>
-                          <div className="entry-links">
-                            <a href="assets/img/portfolio/portfolio-11.webp" className="glightbox"
-                              data-gallery="portfolio-gallery-development"
-                              data-glightbox="title: Cloud Management System; description: Temporibus autem quibusdam et aut officiis debitis.">
-                              <i className="bi bi-arrows-angle-expand"></i>
-                            </a>
-                            <a href="portfolio-details.html">
-                              <i className="bi bi-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  </article>
-                </div>
-
-                <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
-                  <article className="portfolio-entry">
-                    <figure className="entry-image">
-                      <img src="assets/img/portfolio/portfolio-8.webp" className="img-fluid" alt="" loading="lazy" />
-                      <div className="entry-overlay">
-                        <div className="overlay-content">
-                          <div className="entry-meta">Photography</div>
-                          <h3 className="entry-title">Nature Collection</h3>
-                          <div className="entry-links">
-                            <a href="assets/img/portfolio/portfolio-8.webp" className="glightbox"
-                              data-gallery="portfolio-gallery-photography"
-                              data-glightbox="title: Nature Collection; description: Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">
-                              <i className="bi bi-arrows-angle-expand"></i>
-                            </a>
-                            <a href="portfolio-details.html">
-                              <i className="bi bi-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  </article>
-                </div>
-
-                <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
-                  <article className="portfolio-entry">
-                    <figure className="entry-image">
-                      <img src="assets/img/portfolio/portfolio-5.webp" className="img-fluid" alt="" loading="lazy" />
-                      <div className="entry-overlay">
-                        <div className="overlay-content">
-                          <div className="entry-meta">Marketing</div>
-                          <h3 className="entry-title">Brand Strategy</h3>
-                          <div className="entry-links">
-                            <a href="assets/img/portfolio/portfolio-5.webp" className="glightbox"
-                              data-gallery="portfolio-gallery-marketing"
-                              data-glightbox="title: Brand Strategy; description: Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.">
-                              <i className="bi bi-arrows-angle-expand"></i>
-                            </a>
-                            <a href="portfolio-details.html">
-                              <i className="bi bi-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </figure>
-                  </article>
-                </div>
-
-              </div>
+              <PortfolioGrid />
 
             </div>
 
@@ -1262,63 +1011,7 @@ export default function Home() {
               </div>
 
               <div className="col-lg-7" data-aos="fade-up" data-aos-delay="300">
-                <div className="faq-container">
-
-                  <div className="faq-item faq-active">
-                    <h3>What services does PMDC provide?</h3>
-                    <div className="faq-content">
-                      <p>We offer end-to-end digital solutions including UI/UX design, website and web app development,
-                        mobile app development, MVP/POC creation, and custom software tailored to your business needs.</p>
-                    </div>
-                    <i className="faq-toggle bi bi-chevron-right"></i>
-                  </div>
-
-                  <div className="faq-item">
-                    <h3>Do you work with startups and small businesses?</h3>
-                    <div className="faq-content">
-                      <p>Absolutely! We specialize in helping startups validate their ideas with MVPs and scalable solutions.
-                        Our flexible approach fits the budget and goals of early-stage businesses.</p>
-                    </div>
-                    <i className="faq-toggle bi bi-chevron-right"></i>
-                  </div>
-
-                  <div className="faq-item">
-                    <h3>How do you ensure quality and timely delivery?</h3>
-                    <div className="faq-content">
-                      <p>Our process includes structured planning, agile development, and milestone-based delivery.
-                        Regular updates and transparent communication ensure your project stays on track.</p>
-                    </div>
-                    <i className="faq-toggle bi bi-chevron-right"></i>
-                  </div>
-
-                  <div className="faq-item">
-                    <h3>Can you handle ongoing support and maintenance?</h3>
-                    <div className="faq-content">
-                      <p> Yes, we provide post-launch support, regular updates, bug fixes, and feature enhancements
-                        to keep your website or app secure and future-ready.</p>
-                    </div>
-                    <i className="faq-toggle bi bi-chevron-right"></i>
-                  </div>
-
-                  <div className="faq-item">
-                    <h3>What technologies do you use?</h3>
-                    <div className="faq-content">
-                      <p>We use modern frameworks and tools including React, Next.js, Angular, Node.js, NestJS, Flutter,
-                        and cloud solutions (AWS/GCP) to build scalable, secure, and high-performing applications.</p>
-                    </div>
-                    <i className="faq-toggle bi bi-chevron-right"></i>
-                  </div>
-
-                  <div className="faq-item">
-                    <h3>How can I get started with PMDC?</h3>
-                    <div className="faq-content">
-                      <p>Simply reach out via our contact form or connect with us on Upwork or LinkedIn.
-                        We’ll schedule a consultation to discuss your goals and propose a tailored plan.</p>
-                    </div>
-                    <i className="faq-toggle bi bi-chevron-right"></i>
-                  </div>
-
-                </div>
+                <FaqAccordion />
               </div>
 
             </div>
@@ -1513,21 +1206,8 @@ export default function Home() {
 
       </footer>
 
-      {/* Scroll Top */}
-      <a href="#" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
-
-      {/* Preloader */}
-      <div id="preloader"></div>
-
-      {/* Vendor JS Files */}
-      <Script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
-      <Script src="/assets/vendor/aos/aos.js" />
-      <Script src="/assets/vendor/glightbox/js/glightbox.min.js" />
-      {/* <Script src="/assets/vendor/purecounter/purecounter_vanilla.js" /> */}
-      <Script src="/assets/vendor/swiper/swiper-bundle.min.js" />
-      <Script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" />
-      <Script src="/assets/vendor/php-email-form/validate.js" />
-
+      <ScrollTop />
+      <Preloader />
       <ThemeInitializer />
     </>
   );
