@@ -1,6 +1,6 @@
 "use client";
 import Script from 'next/script';
-import ThemeInitializer from '@/components/ThemeInitializer';
+import ThemeInitializer from '@/components/theme-initializer.component';
 
 export default function ServiceDetails() {
     return (

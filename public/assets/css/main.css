@@ -765,6 +765,7 @@ section,
   align-items: center;
   overflow: hidden;
   padding: 100px 0;
+  text-align: center;
 }
 
 .hero::after {

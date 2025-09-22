@@ -28,13 +28,11 @@ const NavBar = () => {
 
         <nav id="navmenu" className="navmenu" role="navigation" aria-label="Primary">
           <ul>
-            <li><a href="#hero" className="active">Home</a></li>
-            <li><a href="#about">Services</a></li>
-            <li><a href="#services">Portfolio</a></li>
-            <li><a href="#portfolio">Careers</a></li>
-            <li><a href="#team">About Us</a></li>
-            <li><a href="#contact">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="#portfolio">Portfolio</Link></li>
+            <li><Link href="#services">Services</Link></li>
+            <li><Link href="#about">About Us</Link></li>
+            <li><Link href="#contact">Contact</Link></li>
           </ul>
           <button
             type="button"

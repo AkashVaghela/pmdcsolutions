@@ -2,12 +2,13 @@
 
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import NavBar from '@/components/NavBar';
-import ScrollTop from '@/components/ScrollTop';
-import Preloader from '@/components/Preloader';
-import FaqAccordion from '@/components/FaqAccordion';
-import PortfolioGrid from '@/components/PortfolioGrid';
-const ThemeInitializer = dynamic(() => import('@/components/ThemeInitializer'), { ssr: false });
+import NavBar from '@/components/navbar.component';
+import ScrollTop from '@/components/scroll-top.component';
+import Preloader from '@/components/preloader.component';
+import FaqAccordion from '@/components/faq-accordian.component';
+import PortfolioGrid from '@/components/portfolio-grid.component';
+const ThemeInitializer = dynamic(() => import('@/components/theme-initializer.component'), { ssr: false });
+
 export default function Home() {
   return (
     <>
@@ -17,21 +18,26 @@ export default function Home() {
 
         <section id="hero" className="hero section">
           <div className="container">
-            <div className="row">
-              <div className="col-lg-7 content-col" data-aos="fade-up">
-                <div className="content">
+            <div className="row justify-content-center text-center">
+              <div className="content-col" data-aos="fade-up">
+                <div className="content py-4">
                   <div className="agency-name">
-                    <h5>OUR AGENCY</h5>
+                    <h5 className="text-uppercase">OUR AGENCY</h5>
                   </div>
 
                   <div className="main-heading">
-                    <h1>Transforming Ideas<br />Into Digital Reality</h1>
+                    <h1>
+                      Transforming Ideas <br /> into <span style={{ color: 'var(--accent-color)' }}>Digital Reality</span>
+                    </h1>
                   </div>
 
-                  <div className="divider"></div>
 
                   <div className="description">
-                    <p>At PMDC, we specialize in building high-performance web and mobile applications that empower businesses, startups, and individuals. With a strong focus on scalability, security, and user experience, our solutions are designed to accelerate growth and establish lasting digital credibility.</p>
+                    <p style={{ maxWidth: '36rem', margin: '0 auto' }}>
+                      We build performance‑driven websites and apps that feel effortless on mobile.
+                      From rapid MVPs to enterprise‑grade platforms, our focus is speed, accessibility,
+                      and real business outcomes — so you launch faster and scale with confidence.
+                    </p>
                   </div>
 
                   <div className="cta-button">
@@ -43,7 +49,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="col-lg-5" data-aos="zoom-out">
+              {/* <div className="col-lg-5" data-aos="zoom-out">
                 <div className="visual-content">
                   <div className="fluid-shape">
                     <img src="assets/img/abstract/abstract-1.webp" alt="Abstract Fluid Shape" className="fluid-img" />
@@ -57,11 +63,11 @@ export default function Home() {
                       <p>Projects Delivered</p>
                     </div>
                     <div className="stats-arrow">
-                      <a href="#portfolio"><i className="bi bi-arrow-up-right"></i></a>
+                      <Link href="/portfolio"><i className="bi bi-arrow-up-right"></i></Link>
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -113,7 +119,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <a href="#" className="btn btn-primary mt-4">Explore Our Services</a>
+                  <Link href="/services" className="btn btn-primary mt-4">Explore Our Services</Link>
                 </div>
               </div>
             </div>
@@ -273,7 +279,7 @@ export default function Home() {
                     <p>
                       At PMDC, we design and develop scalable, secure, and user-friendly web and mobile solutions tailored to your business needs. From startups to established enterprises, our services help clients build strong digital foundations, accelerate growth, and stay competitive.
                     </p>
-                    <Link href="/service-details" className="service-btn">
+                    <Link href="/services" className="service-btn">
                       View All Services
                       <i className="bi bi-arrow-right"></i>
                     </Link>
@@ -286,16 +292,16 @@ export default function Home() {
               <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-card position-relative z-1">
                   <div className="service-icon">
-                    <i className="bi bi-palette"></i>
+                    <i className="bi bi-palette2"></i>
                   </div>
-                  <a href="service-details.html"
+                  <Link href="/services/ui-ux-design"
                     className="card-action d-flex align-items-center justify-content-center rounded-circle">
                     <i className="bi bi-arrow-up-right"></i>
-                  </a>
+                  </Link>
                   <h3>
-                    <a href="service-details.html">
+                    <Link href="/services/ui-ux-design">
                       UI/UX <span>Design</span>
-                    </a>
+                    </Link>
                   </h3>
                   <p>
                     Intuitive, modern, and user-focused interfaces that boost engagement and create seamless digital experiences.
@@ -305,16 +311,16 @@ export default function Home() {
               <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div className="service-card position-relative z-1">
                   <div className="service-icon">
-                    <i className="bi bi-gem"></i>
+                    <i className="bi bi-code-slash"></i>
                   </div>
-                  <a href="service-details.html"
+                  <Link href="/services/web-development"
                     className="card-action d-flex align-items-center justify-content-center rounded-circle">
                     <i className="bi bi-arrow-up-right"></i>
-                  </a>
+                  </Link>
                   <h3>
-                    <a href="service-details.html">
+                    <Link href="/services/web-development">
                       Web <span>Development</span>
-                    </a>
+                    </Link>
                   </h3>
                   <p>
                     Responsive, SEO-optimized websites and web apps built for speed, scalability, and performance.
@@ -324,16 +330,16 @@ export default function Home() {
               <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div className="service-card position-relative z-1">
                   <div className="service-icon">
-                    <i className="bi bi-megaphone"></i>
+                    <i className="bi bi-phone"></i>
                   </div>
-                  <a href="service-details.html"
+                  <Link href="/services/mobile-development"
                     className="card-action d-flex align-items-center justify-content-center rounded-circle">
                     <i className="bi bi-arrow-up-right"></i>
-                  </a>
+                  </Link>
                   <h3>
-                    <a href="service-details.html">
+                    <Link href="/services/mobile-development">
                       Mobile <span>Development</span>
-                    </a>
+                    </Link>
                   </h3>
                   <p>
                     Native and cross-platform apps for iOS and Android, delivering smooth performance and usability.
@@ -343,16 +349,16 @@ export default function Home() {
               <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-card position-relative z-1">
                   <div className="service-icon">
-                    <i className="bi bi-code-slash"></i>
+                    <i className="bi bi-rocket-takeoff"></i>
                   </div>
-                  <a href="service-details.html"
+                  <Link href="/services/mvp-development"
                     className="card-action d-flex align-items-center justify-content-center rounded-circle">
                     <i className="bi bi-arrow-up-right"></i>
-                  </a>
+                  </Link>
                   <h3>
-                    <a href="service-details.html">
+                    <Link href="/services/mvp-development">
                       MVP <span>Development</span>
-                    </a>
+                    </Link>
                   </h3>
                   <p>
                     Launch faster with lean, scalable MVPs designed to validate ideas and attract early customers or investors.
@@ -362,16 +368,16 @@ export default function Home() {
               <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div className="service-card position-relative z-1">
                   <div className="service-icon">
-                    <i className="bi bi-graph-up"></i>
+                    <i className="bi bi-puzzle"></i>
                   </div>
-                  <a href="service-details.html"
+                  <Link href="/services/custom-solutions"
                     className="card-action d-flex align-items-center justify-content-center rounded-circle">
                     <i className="bi bi-arrow-up-right"></i>
-                  </a>
+                  </Link>
                   <h3>
-                    <a href="service-details.html">
+                    <Link href="/services/custom-solutions">
                       Custom  <span>Solutions</span>
-                    </a>
+                    </Link>
                   </h3>
                   <p>
                     Tailored web and mobile solutions to automate workflows, solve complex problems, and fuel business growth.
@@ -381,16 +387,16 @@ export default function Home() {
               <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div className="service-card position-relative z-1">
                   <div className="service-icon">
-                    <i className="bi bi-camera-video"></i>
+                    <i className="bi bi-bag"></i>
                   </div>
-                  <a href="service-details.html"
+                  <Link href="/services/e-commerce-solutions"
                     className="card-action d-flex align-items-center justify-content-center rounded-circle">
                     <i className="bi bi-arrow-up-right"></i>
-                  </a>
+                  </Link>
                   <h3>
-                    <a href="service-details.html">
+                    <Link href="/services/e-commerce-solutions">
                       E-Commerce <span>Solutions</span>
-                    </a>
+                    </Link>
                   </h3>
                   <p>
                     We deliver powerful online stores with smooth navigation, secure payments, and customer-first shopping experiences.
@@ -417,7 +423,7 @@ export default function Home() {
               <div className="step-item" data-aos="fade-right" data-aos-delay="200">
                 <div className="step-content">
                   <div className="step-icon">
-                    <i className="bi bi-lightbulb"></i>
+                    <i className="bi bi-search"></i>
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 01</span>
@@ -430,7 +436,7 @@ export default function Home() {
               <div className="step-item" data-aos="fade-left" data-aos-delay="300">
                 <div className="step-content">
                   <div className="step-icon">
-                    <i className="bi bi-gear"></i>
+                    <i className="bi bi-map"></i>
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 02</span>
@@ -443,7 +449,7 @@ export default function Home() {
               <div className="step-item" data-aos="fade-right" data-aos-delay="400">
                 <div className="step-content">
                   <div className="step-icon">
-                    <i className="bi bi-bar-chart"></i>
+                    <i className="bi bi-easel"></i>
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 03</span>
@@ -456,7 +462,7 @@ export default function Home() {
               <div className="step-item" data-aos="fade-left" data-aos-delay="500">
                 <div className="step-content">
                   <div className="step-icon">
-                    <i className="bi bi-check2-circle"></i>
+                    <i className="bi bi-lightning-charge"></i>
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 04</span>
@@ -469,7 +475,7 @@ export default function Home() {
               <div className="step-item" data-aos="fade-right" data-aos-delay="400">
                 <div className="step-content">
                   <div className="step-icon">
-                    <i className="bi bi-bar-chart"></i>
+                    <i className="bi bi-rocket-takeoff"></i>
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 05</span>
@@ -482,7 +488,7 @@ export default function Home() {
               <div className="step-item" data-aos="fade-left" data-aos-delay="500">
                 <div className="step-content">
                   <div className="step-icon">
-                    <i className="bi bi-check2-circle"></i>
+                    <i className="bi bi-graph-up-arrow"></i>
                   </div>
                   <div className="step-info">
                     <span className="step-number">Step 06</span>
@@ -1152,39 +1158,39 @@ export default function Home() {
         <div className="container footer-top">
           <div className="row gy-4">
             <div className="col-lg-5 col-md-12 footer-about">
-              <a href="index.html" className="logo d-flex align-items-center">
+              <Link href="/" className="logo d-flex align-items-center">
                 <span className="sitename">PMDC Solutions</span>
-              </a>
+              </Link>
               <p>PMDC Solutions is a full-stack digital agency delivering modern web, mobile, and
                 custom software solutions. We help startups and enterprises turn ideas into
                 scalable products with robust technology and user-first design.</p>
               <div className="social-links d-flex mt-4">
-                <a href=""><i className="bi bi-twitter-x"></i></a>
-                <a href=""><i className="bi bi-facebook"></i></a>
-                <a href=""><i className="bi bi-instagram"></i></a>
-                <a href=""><i className="bi bi-linkedin"></i></a>
+                <Link href=""><i className="bi bi-twitter-x"></i></Link>
+                <Link href=""><i className="bi bi-facebook"></i></Link>
+                <Link href=""><i className="bi bi-instagram"></i></Link>
+                <Link href=""><i className="bi bi-linkedin"></i></Link>
               </div>
             </div>
 
             <div className="col-lg-2 col-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Terms of service</a></li>
-                <li><a href="#">Privacy policy</a></li>
+                <li><Link href="/portfolio">Portfolio</Link></li>
+                <li><Link href="/services">Services</Link></li>
+                <li><Link href="/about">About Us</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
 
             <div className="col-lg-2 col-6 footer-links">
               <h4>Our Services</h4>
               <ul>
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">Web Development</a></li>
-                <li><a href="#">Product Management</a></li>
-                <li><a href="#">Marketing</a></li>
-                <li><a href="#">Graphic Design</a></li>
+                <li><Link href="/services/ui-ux-design">UI/UX Design</Link></li>
+                <li><Link href="/services/web-development">Web Development</Link></li>
+                <li><Link href="/services/mobile-development">Mobile Development</Link></li>
+                <li><Link href="/services/mvp-development">MVP Development</Link></li>
+                <li><Link href="/services/custom-solutions">Custom Solutions</Link></li>
+                <li><Link href="/services/e-commerce-solutions">E-Commerce Solutions</Link></li>
               </ul>
             </div>
 
