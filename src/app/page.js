@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <NavBar />
 
-      <main className="main">
+      <main id="main" className="main" role="main">
 
         <section id="hero" className="hero section">
           <div className="container">

@@ -103,11 +103,13 @@ const ThemeInitializer = () => {
        * Animation on scroll function and init
        */
       const aosInit = () => {
+        const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         AOS?.init({
-          duration: 600,
+          duration: prefersReduced ? 0 : 600,
           easing: 'ease-in-out',
           once: true,
-          mirror: false
+          mirror: false,
+          disable: prefersReduced
         });
       }
       // Initialize AOS immediately in case page has already loaded
