@@ -13,16 +13,18 @@ export default function UiUxDesignPage() {
     <>
       <NavBar />
       <main className="main" role="main">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.pmdc.solutions/"},{"@type":"ListItem","position":2,"name":"UI/UX Design","item":"https://www.pmdc.solutions/services/ui-ux-design"}] }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", "name": "UI/UX Design", "provider": {"@type":"Organization","name":"PMDC Solutions"}, "serviceType": "User interface and user experience design", "areaServed": "Global", "url": "https://www.pmdc.solutions/services/ui-ux-design" }) }} />
         <div className="page-title dark-background" data-aos="fade">
           <div className="container position-relative">
             <h1>UI/UX Design</h1>
             <p>Human-centered interfaces that are accessible, fast, and delightful across devices.</p>
-            <nav className="breadcrumbs">
+            {/* <nav className="breadcrumbs">
               <ol>
                 <li><Link href="/">Home</Link></li>
                 <li className="current">UI/UX Design</li>
               </ol>
-            </nav>
+            </nav> */}
           </div>
         </div>
 
@@ -74,7 +76,7 @@ export default function UiUxDesignPage() {
                             </div>
                           </div>
                           <div className="col-md-6">
-                            <img src="/assets/img/services/services-2.webp" alt="UI/UX" className="img-fluid rounded" />
+                            <img src="/assets/img/services/services-2.webp" alt="UI and UX Design" className="img-fluid rounded" loading="lazy" />
                           </div>
                         </div>
                       </div>
@@ -95,24 +97,24 @@ export default function UiUxDesignPage() {
                         </div>
                       </div>
                       <div className={`tab-pane fade ${activeTab === 'tools' ? 'show active' : ''}`} id="tab-tools" role="tabpanel">
-                        <div className="row g-4">
+                        <div className="row g-4" role="list" aria-label="Design tools and technologies">
                           <div className="col-md-6">
                             <div className="content-block">
                               <h3>Design</h3>
-                              <ul>
-                                <li>Figma, FigJam, Adobe CC</li>
-                                <li>Design Systems, Tokens, Auto‑layout</li>
-                                <li>WCAG 2.2 Accessibility</li>
+                              <ul role="list">
+                                <li role="listitem">Figma · FigJam · Adobe CC</li>
+                                <li role="listitem">Design Systems · Tokens · Auto‑layout</li>
+                                <li role="listitem">WCAG 2.2 Accessibility</li>
                               </ul>
                             </div>
                           </div>
                           <div className="col-md-6">
                             <div className="content-block">
                               <h3>Research & Analytics</h3>
-                              <ul>
-                                <li>Usability testing, Interviews, Surveys</li>
-                                <li>Hotjar, GA4, Mixpanel</li>
-                                <li>Prototyping and handoff to dev</li>
+                              <ul role="list">
+                                <li role="listitem">Usability testing · Interviews · Surveys</li>
+                                <li role="listitem">Hotjar · GA4 · Mixpanel</li>
+                                <li role="listitem">Prototyping · Developer handoff</li>
                               </ul>
                             </div>
                           </div>

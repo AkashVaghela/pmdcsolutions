@@ -15,6 +15,41 @@ export default function Home() {
       <NavBar />
 
       <main id="main" className="main" role="main">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How long does a typical project take?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Project timelines vary by scope. MVPs can ship in 4–8 weeks, while larger platforms may take 8–16+ weeks. We run agile sprints with weekly demos."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you support SEO and accessibility?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We build SEO‑first, optimize Core Web Vitals, and follow WCAG 2.2 AA to ensure inclusive and high‑ranking experiences."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which technologies do you use?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our core stack includes Next.js, React, TypeScript, Node.js, and PostgreSQL—augmented with platform‑specific tools for mobile and e‑commerce."
+                  }
+                }
+              ]
+            })
+          }}
+        />
 
         <section id="hero" className="hero section">
           <div className="container">
@@ -27,23 +62,22 @@ export default function Home() {
 
                   <div className="main-heading">
                     <h1>
-                      Transforming Ideas <br /> into <span style={{ color: 'var(--accent-color)' }}>Digital Reality</span>
+                      High‑Performance Web & Mobile Development <br /> that Drives <span style={{ color: 'var(--accent-color)' }}>Growth</span>
                     </h1>
                   </div>
 
 
                   <div className="description">
                     <p style={{ maxWidth: '36rem', margin: '0 auto' }}>
-                      We build performance‑driven websites and apps that feel effortless on mobile.
-                      From rapid MVPs to enterprise‑grade platforms, our focus is speed, accessibility,
-                      and real business outcomes — so you launch faster and scale with confidence.
+                      PMDC delivers SEO‑first, accessible, and lightning‑fast digital experiences. We design and build
+                      Next.js websites and mobile apps that rank on search, load instantly, and convert across devices.
                     </p>
                   </div>
 
                   <div className="cta-button">
-                    <a href="#services" className="btn">
+                    <a href="/#services" className="btn" aria-label="Explore our services">
                       <span>EXPLORE SERVICES</span>
-                      <i className="bi bi-arrow-right"></i>
+                      <i className="bi bi-arrow-right" aria-hidden="true"></i>
                     </a>
                   </div>
                 </div>
@@ -119,7 +153,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <Link href="/services" className="btn btn-primary mt-4">Explore Our Services</Link>
+                  <Link href="/#services" className="btn btn-primary mt-4">Explore Our Services</Link>
                 </div>
               </div>
             </div>
@@ -279,10 +313,10 @@ export default function Home() {
                     <p>
                       At PMDC, we design and develop scalable, secure, and user-friendly web and mobile solutions tailored to your business needs. From startups to established enterprises, our services help clients build strong digital foundations, accelerate growth, and stay competitive.
                     </p>
-                    <Link href="/services" className="service-btn">
+                    {/* <Link href="/services" className="service-btn">
                       View All Services
                       <i className="bi bi-arrow-right"></i>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -346,6 +380,25 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+              <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div className="service-card position-relative z-1">
+                  <div className="service-icon">
+                    <i className="bi bi-bag"></i>
+                  </div>
+                  <Link href="/services/e-commerce-solutions"
+                    className="card-action d-flex align-items-center justify-content-center rounded-circle">
+                    <i className="bi bi-arrow-up-right"></i>
+                  </Link>
+                  <h3>
+                    <Link href="/services/e-commerce-solutions">
+                      E-Commerce <span>Solutions</span>
+                    </Link>
+                  </h3>
+                  <p>
+                    We deliver powerful online stores with smooth navigation, secure payments, and customer-first shopping experiences.
+                  </p>
+                </div>
+              </div>
               <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-card position-relative z-1">
                   <div className="service-icon">
@@ -384,30 +437,31 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div className="service-card position-relative z-1">
-                  <div className="service-icon">
-                    <i className="bi bi-bag"></i>
-                  </div>
-                  <Link href="/services/e-commerce-solutions"
-                    className="card-action d-flex align-items-center justify-content-center rounded-circle">
-                    <i className="bi bi-arrow-up-right"></i>
-                  </Link>
-                  <h3>
-                    <Link href="/services/e-commerce-solutions">
-                      E-Commerce <span>Solutions</span>
-                    </Link>
-                  </h3>
-                  <p>
-                    We deliver powerful online stores with smooth navigation, secure payments, and customer-first shopping experiences.
-                  </p>
-                </div>
-              </div>
+
             </div>
 
           </div>
 
         </section>
+
+        <section id="portfolio" className="portfolio section">
+
+          <div className="container section-title" data-aos="fade-up">
+            <h2>Portfolio</h2>
+            <div><span>Check Our</span> <span className="description-title">Portfolio</span></div>
+          </div>
+
+          <div className="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+            <div className="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+              <PortfolioGrid />
+
+            </div>
+
+          </div>
+
+          </section>
 
         <section id="steps" className="steps section">
 
@@ -729,24 +783,7 @@ export default function Home() {
 
         </section> */}
 
-        <section id="portfolio" className="portfolio section">
 
-          <div className="container section-title" data-aos="fade-up">
-            <h2>Portfolio</h2>
-            <div><span>Check Our</span> <span className="description-title">Portfolio</span></div>
-          </div>
-
-          <div className="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
-            <div className="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-              <PortfolioGrid />
-
-            </div>
-
-          </div>
-
-        </section>
 
 
         {/* <section id="team" className="team section light-background">
@@ -1175,10 +1212,10 @@ export default function Home() {
             <div className="col-lg-2 col-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
-                <li><Link href="/portfolio">Portfolio</Link></li>
-                <li><Link href="/services">Services</Link></li>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/#services">Services</Link></li>
+                <li><Link href="/#portfolio">Portfolio</Link></li>
+                <li><Link href="/#about">About Us</Link></li>
+                <li><Link href="/#contact">Contact</Link></li>
               </ul>
             </div>
 
@@ -1188,9 +1225,9 @@ export default function Home() {
                 <li><Link href="/services/ui-ux-design">UI/UX Design</Link></li>
                 <li><Link href="/services/web-development">Web Development</Link></li>
                 <li><Link href="/services/mobile-development">Mobile Development</Link></li>
+                <li><Link href="/services/e-commerce-solutions">E-Commerce Solutions</Link></li>
                 <li><Link href="/services/mvp-development">MVP Development</Link></li>
                 <li><Link href="/services/custom-solutions">Custom Solutions</Link></li>
-                <li><Link href="/services/e-commerce-solutions">E-Commerce Solutions</Link></li>
               </ul>
             </div>
 

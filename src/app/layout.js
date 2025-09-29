@@ -23,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="canonical" href="https://www.pmdc.solutions/" />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
         {/* Favicons */}
         <link href="/assets/img/favicon.png" rel="icon" />
         <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -31,6 +35,7 @@ export default function RootLayout({
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
           rel="stylesheet"
@@ -50,6 +55,46 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <a href="#main" className="visually-hidden-focusable">Skip to main content</a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "PMDC Solutions",
+              "url": "https://www.pmdc.solutions/",
+              "logo": "https://www.pmdc.solutions/assets/img/logo.webp",
+              "sameAs": [
+                "https://www.linkedin.com/company/pmdc",
+                "https://twitter.com/pmdc",
+                "https://www.facebook.com/pmdc"
+              ],
+              "contactPoint": [{
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "info@example.com",
+                "areaServed": "Global",
+                "availableLanguage": ["en"]
+              }]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "PMDC Solutions",
+              "url": "https://www.pmdc.solutions/",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.pmdc.solutions/?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
         {children}
       </body>
     </html>

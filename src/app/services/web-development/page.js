@@ -13,16 +13,43 @@ export default function WebDevelopmentPage() {
     <>
       <NavBar />
       <main className="main" role="main">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pmdc.solutions/"},
+                {"@type": "ListItem", "position": 2, "name": "Web Development", "item": "https://www.pmdc.solutions/services/web-development"}
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Web Development",
+              "provider": {"@type": "Organization", "name": "PMDC Solutions"},
+              "serviceType": "Web application development",
+              "areaServed": "Global",
+              "url": "https://www.pmdc.solutions/services/web-development"
+            })
+          }}
+        />
         <div className="page-title dark-background" data-aos="fade">
           <div className="container position-relative">
             <h1>Web Development</h1>
             <p>High-performance, SEO-friendly, and scalable web apps built with modern stacks.</p>
-            <nav className="breadcrumbs">
+            {/* <nav className="breadcrumbs">
               <ol>
                 <li><Link href="/">Home</Link></li>
                 <li className="current">Web Development</li>
               </ol>
-            </nav>
+            </nav> */}
           </div>
         </div>
 
@@ -54,7 +81,7 @@ export default function WebDevelopmentPage() {
                             </div>
                           </div>
                           <div className="col-md-6">
-                            <img src="/assets/img/services/services-4.webp" alt="Web Development" className="img-fluid rounded" />
+                            <img src="/assets/img/services/services-4.webp" alt="Web Development" className="img-fluid rounded" loading="lazy" />
                           </div>
                         </div>
                       </div>
@@ -73,24 +100,24 @@ export default function WebDevelopmentPage() {
                         </div>
                       </div>
                       <div className={`tab-pane fade ${activeTab === 'tools' ? 'show active' : ''}`} id="tab-tools" role="tabpanel">
-                        <div className="row g-4">
+                        <div className="row g-4" role="list" aria-label="Web development tools and technologies">
                           <div className="col-md-6">
                             <div className="content-block">
                               <h3>Frontend</h3>
-                              <ul>
-                                <li>Next.js, React, TypeScript</li>
-                                <li>CSS Modules, Tailwind CSS, Bootstrap</li>
-                                <li>A11y, Lighthouse, Web Vitals</li>
+                              <ul role="list">
+                                <li role="listitem" aria-label="Next.js, React, TypeScript">Next.js · React · TypeScript</li>
+                                <li role="listitem" aria-label="CSS Modules, Tailwind, Bootstrap">CSS Modules · Tailwind · Bootstrap</li>
+                                <li role="listitem" aria-label="Accessibility, Lighthouse, Web Vitals">A11y · Lighthouse · Web Vitals</li>
                               </ul>
                             </div>
                           </div>
                           <div className="col-md-6">
                             <div className="content-block">
                               <h3>Backend & DevOps</h3>
-                              <ul>
-                                <li>Node.js, Express, PostgreSQL, Prisma</li>
-                                <li>AWS, Vercel, Docker, CI/CD (GitHub Actions)</li>
-                                <li>Auth (JWT/OAuth), Monitoring (Sentry)</li>
+                              <ul role="list">
+                                <li role="listitem" aria-label="Node.js, Express, PostgreSQL, Prisma">Node.js · Express · PostgreSQL · Prisma</li>
+                                <li role="listitem" aria-label="AWS, Vercel, Docker, CI CD">AWS · Vercel · Docker · CI/CD</li>
+                                <li role="listitem" aria-label="Authentication and monitoring">Auth · Sentry · Observability</li>
                               </ul>
                             </div>
                           </div>

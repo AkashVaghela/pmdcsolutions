@@ -13,16 +13,18 @@ export default function MobileDevelopmentPage() {
     <>
       <NavBar />
       <main className="main" role="main">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.pmdc.solutions/"},{"@type":"ListItem","position":2,"name":"Mobile Development","item":"https://www.pmdc.solutions/services/mobile-development"}] }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", "name": "Mobile Development", "provider": {"@type":"Organization","name":"PMDC Solutions"}, "serviceType": "iOS and Android app development", "areaServed": "Global", "url": "https://www.pmdc.solutions/services/mobile-development" }) }} />
         <div className="page-title dark-background" data-aos="fade">
           <div className="container position-relative">
             <h1>Mobile Development</h1>
             <p>Native and cross-platform apps with smooth performance and exceptional UX.</p>
-            <nav className="breadcrumbs">
+            {/* <nav className="breadcrumbs">
               <ol>
                 <li><Link href="/">Home</Link></li>
                 <li className="current">Mobile Development</li>
               </ol>
-            </nav>
+            </nav> */}
           </div>
         </div>
 
@@ -47,7 +49,7 @@ export default function MobileDevelopmentPage() {
                       <div className={`tab-pane fade ${activeTab === 'overview' ? 'show active' : ''}`} id="tab-overview" role="tabpanel">
                         <div className="row">
                           <div className="col-md-6"><div className="content-block"><h3>Right Tech, Right Outcome</h3><p>Swift/Kotlin for fully native; React Native/Flutter for cross‑platform speed.</p><p>Offline‑first, secure auth, analytics, and crash monitoring included.</p></div></div>
-                          <div className="col-md-6"><img src="/assets/img/services/services-10.webp" alt="Mobile" className="img-fluid rounded" /></div>
+                          <div className="col-md-6"><img src="/assets/img/services/services-10.webp" alt="Mobile Development" className="img-fluid rounded" loading="lazy" /></div>
                         </div>
                       </div>
                       <div className={`tab-pane fade ${activeTab === 'process' ? 'show active' : ''}`} id="tab-process" role="tabpanel">
@@ -65,24 +67,25 @@ export default function MobileDevelopmentPage() {
                         </div>
                       </div>
                       <div className={`tab-pane fade ${activeTab === 'tools' ? 'show active' : ''}`} id="tab-tools" role="tabpanel">
-                        <div className="row g-4">
+                        <div className="row g-4" role="list" aria-label="Mobile development tools and technologies">
                           <div className="col-md-6">
                             <div className="content-block">
                               <h3>Platforms</h3>
-                              <ul>
-                                <li>iOS (Swift, SwiftUI), Android (Kotlin)</li>
-                                <li>React Native, Flutter</li>
-                                <li>App Store Connect, Google Play Console</li>
+                              <ul role="list">
+                                  <li role="listitem">iOS (Swift/SwiftUI)</li>
+                                <li role="listitem">Android (Kotlin)</li>
+                                <li role="listitem">React Native · Flutter</li>
+                                <li role="listitem">App Store Connect · Play Console</li>
                               </ul>
                             </div>
                           </div>
                           <div className="col-md-6">
                             <div className="content-block">
                               <h3>Backend & QA</h3>
-                              <ul>
-                                <li>Firebase, Supabase, GraphQL/REST</li>
-                                <li>CI/CD, Fastlane, Detox/XCUI/Espresso</li>
-                                <li>Analytics (GA4, Segment), Crashlytics</li>
+                              <ul role="list">
+                                <li role="listitem">Firebase · Supabase · GraphQL/REST</li>
+                                <li role="listitem">CI/CD · Fastlane · Detox/XCUI/Espresso</li>
+                                <li role="listitem">Analytics (GA4/Segment) · Crashlytics</li>
                               </ul>
                             </div>
                           </div>

@@ -29,10 +29,10 @@ const NavBar = () => {
         <nav id="navmenu" className="navmenu" role="navigation" aria-label="Primary">
           <ul>
             <li><Link href="/">Home</Link></li>
-            <li><Link href="#portfolio">Portfolio</Link></li>
-            <li><Link href="#services">Services</Link></li>
-            <li><Link href="#about">About Us</Link></li>
-            <li><Link href="#contact">Contact</Link></li>
+            <li><Link href="/#services">Services</Link></li>
+            <li><Link href="/#portfolio">Portfolio</Link></li>
+            <li><Link href="/#about">About Us</Link></li>
+            <li><Link href="/#contact">Contact</Link></li>
           </ul>
           <button
             type="button"
@@ -44,7 +44,7 @@ const NavBar = () => {
           />
         </nav>
 
-        <a className="btn-getstarted" href="#about">Book Free Discovery Call</a>
+        <a className="btn-getstarted" href="/#contact">Book Free Discovery Call</a>
       </div>
     </header>
   );
