@@ -31,16 +31,11 @@ export default function UiUxDesignPage() {
             <div className="row gy-5">
               <div className="col-lg-8 order-lg-1 order-2">
                 <div className="service-main-content">
-                  <div className="service-header" data-aos="fade-up">
+                <div className="service-header" data-aos="fade-up">
                     <h1>User Experience That Converts</h1>
-                    <div className="service-meta">
-                      <span><i className="bi bi-award"></i> Premium Service</span>
-                      <span><i className="bi bi-clock"></i> Since 2015</span>
-                      <span><i className="bi bi-star-fill"></i> 4.9/5 Rating</span>
-                    </div>
                     <p className="lead">
-                      We design intuitive, accessible, and conversion-focused products. From research and wireframes
-                      to polished visual systems, we align every interaction to your business goals.
+                      We design accessible, conversion‑focused interfaces backed by research. From discovery and wireframes
+                      to scalable design systems, our UX team builds products that rank, retain, and convert.
                     </p>
                   </div>
 
@@ -61,6 +56,11 @@ export default function UiUxDesignPage() {
                           <i className="bi bi-graph-up-arrow"></i> Benefits
                         </button>
                       </li>
+                      <li className="nav-item" role="presentation">
+                        <button className={`nav-link ${activeTab === 'tools' ? 'active' : ''}`} onClick={() => setActiveTab('tools')} type="button" role="tab" aria-selected={activeTab === 'tools'}>
+                          <i className="bi bi-hammer"></i> Tools & Technologies
+                        </button>
+                      </li>
                     </ul>
 
                     <div className="tab-content">
@@ -69,8 +69,8 @@ export default function UiUxDesignPage() {
                           <div className="col-md-6">
                             <div className="content-block">
                               <h3>Research-led Design</h3>
-                              <p>We synthesize user research and analytics into actionable insights, translating them into clear user flows and wireframes.</p>
-                              <p>We emphasize accessibility and performance from the start, ensuring great UX on mobile and desktop.</p>
+                              <p>Turn insights into interfaces. We map journeys, validate flows, and prototype to reduce risk.</p>
+                              <p>Accessibility, motion, and performance are first-class to drive retention and SEO.</p>
                             </div>
                           </div>
                           <div className="col-md-6">
@@ -92,6 +92,30 @@ export default function UiUxDesignPage() {
                         <div className="row g-4">
                           <div className="col-md-6"><div className="benefit-card"><div className="benefit-icon"><i className="bi bi-emoji-smile"></i></div><h4>Happier Users</h4><p>Reduce friction and improve satisfaction.</p></div></div>
                           <div className="col-md-6"><div className="benefit-card"><div className="benefit-icon"><i className="bi bi-bar-chart-line"></i></div><h4>Higher Conversions</h4><p>Design aligned to business KPIs.</p></div></div>
+                        </div>
+                      </div>
+                      <div className={`tab-pane fade ${activeTab === 'tools' ? 'show active' : ''}`} id="tab-tools" role="tabpanel">
+                        <div className="row g-4">
+                          <div className="col-md-6">
+                            <div className="content-block">
+                              <h3>Design</h3>
+                              <ul>
+                                <li>Figma, FigJam, Adobe CC</li>
+                                <li>Design Systems, Tokens, Auto‑layout</li>
+                                <li>WCAG 2.2 Accessibility</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="content-block">
+                              <h3>Research & Analytics</h3>
+                              <ul>
+                                <li>Usability testing, Interviews, Surveys</li>
+                                <li>Hotjar, GA4, Mixpanel</li>
+                                <li>Prototyping and handoff to dev</li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

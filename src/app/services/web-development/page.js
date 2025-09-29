@@ -31,14 +31,9 @@ export default function WebDevelopmentPage() {
             <div className="row gy-5">
               <div className="col-lg-8 order-lg-1 order-2">
                 <div className="service-main-content">
-                  <div className="service-header" data-aos="fade-up">
+                <div className="service-header" data-aos="fade-up">
                     <h1>Fast, Secure, and Maintainable</h1>
-                    <div className="service-meta">
-                      <span><i className="bi bi-award"></i> Premium Service</span>
-                      <span><i className="bi bi-clock"></i> Since 2015</span>
-                      <span><i className="bi bi-star-fill"></i> 4.9/5 Rating</span>
-                    </div>
-                    <p className="lead">We build web platforms with clean architecture, great DX, and top-tier UX. From landing pages to complex SaaS, we focus on speed and reliability.</p>
+                    <p className="lead">We build SEO-first, Core Web Vitals–optimized web apps with clean architecture and accessible UX. From landing pages to enterprise SaaS, our Next.js and Node.js experts ship scalable, secure, and maintainable products that rank well and convert.</p>
                   </div>
 
                   <div className="service-tabs" data-aos="fade-up" data-aos-delay="200">
@@ -46,15 +41,16 @@ export default function WebDevelopmentPage() {
                       <li className="nav-item"><button className={`nav-link ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')} type="button" role="tab"><i className="bi bi-info-circle"></i> Overview</button></li>
                       <li className="nav-item"><button className={`nav-link ${activeTab === 'process' ? 'active' : ''}`} onClick={() => setActiveTab('process')} type="button" role="tab"><i className="bi bi-diagram-3"></i> Process</button></li>
                       <li className="nav-item"><button className={`nav-link ${activeTab === 'benefits' ? 'active' : ''}`} onClick={() => setActiveTab('benefits')} type="button" role="tab"><i className="bi bi-graph-up-arrow"></i> Benefits</button></li>
+                      <li className="nav-item"><button className={`nav-link ${activeTab === 'tools' ? 'active' : ''}`} onClick={() => setActiveTab('tools')} type="button" role="tab"><i className="bi bi-hammer"></i> Tools & Technologies</button></li>
                     </ul>
                     <div className="tab-content">
                       <div className={`tab-pane fade ${activeTab === 'overview' ? 'show active' : ''}`} id="tab-overview" role="tabpanel">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="content-block">
-                              <h3>Modern Stacks</h3>
-                              <p>Next.js, Node.js, and cloud-native tooling to deliver robust, scalable apps.</p>
-                              <p>CI/CD, testing, and observability baked in for long-term maintainability.</p>
+                              <h3>Modern, SEO-First Stack</h3>
+                              <p>Next.js and React with TypeScript for performance, stability, and developer speed.</p>
+                              <p>Server-side rendering, structured data, and accessibility to improve rankings.</p>
                             </div>
                           </div>
                           <div className="col-md-6">
@@ -74,6 +70,30 @@ export default function WebDevelopmentPage() {
                         <div className="row g-4">
                           <div className="col-md-6"><div className="benefit-card"><div className="benefit-icon"><i className="bi bi-speedometer"></i></div><h4>Blazing Fast</h4><p>Core Web Vitals optimized.</p></div></div>
                           <div className="col-md-6"><div className="benefit-card"><div className="benefit-icon"><i className="bi bi-shield-check"></i></div><h4>Secure</h4><p>Hardened against common threats.</p></div></div>
+                        </div>
+                      </div>
+                      <div className={`tab-pane fade ${activeTab === 'tools' ? 'show active' : ''}`} id="tab-tools" role="tabpanel">
+                        <div className="row g-4">
+                          <div className="col-md-6">
+                            <div className="content-block">
+                              <h3>Frontend</h3>
+                              <ul>
+                                <li>Next.js, React, TypeScript</li>
+                                <li>CSS Modules, Tailwind CSS, Bootstrap</li>
+                                <li>A11y, Lighthouse, Web Vitals</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="content-block">
+                              <h3>Backend & DevOps</h3>
+                              <ul>
+                                <li>Node.js, Express, PostgreSQL, Prisma</li>
+                                <li>AWS, Vercel, Docker, CI/CD (GitHub Actions)</li>
+                                <li>Auth (JWT/OAuth), Monitoring (Sentry)</li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

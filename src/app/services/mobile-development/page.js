@@ -31,14 +31,9 @@ export default function MobileDevelopmentPage() {
             <div className="row gy-5">
               <div className="col-lg-8 order-lg-1 order-2">
                 <div className="service-main-content">
-                  <div className="service-header" data-aos="fade-up">
+                <div className="service-header" data-aos="fade-up">
                     <h1>High-Quality Mobile Experiences</h1>
-                    <div className="service-meta">
-                      <span><i className="bi bi-award"></i> Premium Service</span>
-                      <span><i className="bi bi-clock"></i> Since 2015</span>
-                      <span><i className="bi bi-star-fill"></i> 4.9/5 Rating</span>
-                    </div>
-                    <p className="lead">From idea to App Store/Play Store, we ship reliable mobile apps with great performance and seamless UX.</p>
+                    <p className="lead">We craft App Store and Play Store–ready apps with native performance, accessibility, and strong analytics. Our Swift, Kotlin, and cross‑platform teams ship secure, scalable apps that users love and that rank in search.</p>
                   </div>
 
                   <div className="service-tabs" data-aos="fade-up" data-aos-delay="200">
@@ -46,11 +41,12 @@ export default function MobileDevelopmentPage() {
                       <li className="nav-item"><button className={`nav-link ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')} type="button" role="tab"><i className="bi bi-info-circle"></i> Overview</button></li>
                       <li className="nav-item"><button className={`nav-link ${activeTab === 'process' ? 'active' : ''}`} onClick={() => setActiveTab('process')} type="button" role="tab"><i className="bi bi-diagram-3"></i> Process</button></li>
                       <li className="nav-item"><button className={`nav-link ${activeTab === 'benefits' ? 'active' : ''}`} onClick={() => setActiveTab('benefits')} type="button" role="tab"><i className="bi bi-graph-up-arrow"></i> Benefits</button></li>
+                      <li className="nav-item"><button className={`nav-link ${activeTab === 'tools' ? 'active' : ''}`} onClick={() => setActiveTab('tools')} type="button" role="tab"><i className="bi bi-hammer"></i> Tools & Technologies</button></li>
                     </ul>
                     <div className="tab-content">
                       <div className={`tab-pane fade ${activeTab === 'overview' ? 'show active' : ''}`} id="tab-overview" role="tabpanel">
                         <div className="row">
-                          <div className="col-md-6"><div className="content-block"><h3>Tech Choices</h3><p>Swift/Kotlin and React Native/Flutter based on your needs, timeline, and budget.</p><p>We ensure offline support, analytics, and secure auth.</p></div></div>
+                          <div className="col-md-6"><div className="content-block"><h3>Right Tech, Right Outcome</h3><p>Swift/Kotlin for fully native; React Native/Flutter for cross‑platform speed.</p><p>Offline‑first, secure auth, analytics, and crash monitoring included.</p></div></div>
                           <div className="col-md-6"><img src="/assets/img/services/services-10.webp" alt="Mobile" className="img-fluid rounded" /></div>
                         </div>
                       </div>
@@ -66,6 +62,30 @@ export default function MobileDevelopmentPage() {
                         <div className="row g-4">
                           <div className="col-md-6"><div className="benefit-card"><div className="benefit-icon"><i className="bi bi-phone"></i></div><h4>Great UX</h4><p>Native-feel across platforms.</p></div></div>
                           <div className="col-md-6"><div className="benefit-card"><div className="benefit-icon"><i className="bi bi-cloud-arrow-up"></i></div><h4>Scalable</h4><p>Cloud-backed for growth.</p></div></div>
+                        </div>
+                      </div>
+                      <div className={`tab-pane fade ${activeTab === 'tools' ? 'show active' : ''}`} id="tab-tools" role="tabpanel">
+                        <div className="row g-4">
+                          <div className="col-md-6">
+                            <div className="content-block">
+                              <h3>Platforms</h3>
+                              <ul>
+                                <li>iOS (Swift, SwiftUI), Android (Kotlin)</li>
+                                <li>React Native, Flutter</li>
+                                <li>App Store Connect, Google Play Console</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="content-block">
+                              <h3>Backend & QA</h3>
+                              <ul>
+                                <li>Firebase, Supabase, GraphQL/REST</li>
+                                <li>CI/CD, Fastlane, Detox/XCUI/Espresso</li>
+                                <li>Analytics (GA4, Segment), Crashlytics</li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
