@@ -62,15 +62,13 @@ export default function Home() {
 
                   <div className="main-heading">
                     <h1>
-                      High‑Performance Web & Mobile Development <br /> that Drives <span style={{ color: 'var(--accent-color)' }}>Growth</span>
+                    Transforming Ideas into <br /> Impactful <span style={{ color: 'var(--accent-color)' }}>Digital Products</span>
                     </h1>
                   </div>
 
 
                   <div className="description">
-                    <p style={{ maxWidth: '36rem', margin: '0 auto' }}>
-                      PMDC delivers SEO‑first, accessible, and lightning‑fast digital experiences. We design and build
-                      Next.js websites and mobile apps that rank on search, load instantly, and convert across devices.
+                    <p style={{ maxWidth: '42rem', margin: '0 auto' }}>PMDC delivers powerful web, mobile, and eCommerce solutions designed to rank on search, load instantly, and convert seamlessly. We help businesses of all sizes create digital experiences that attract customers, build trust, and stay ahead in today’s fast-moving online market.
                     </p>
                   </div>
 
@@ -1202,10 +1200,8 @@ export default function Home() {
                 custom software solutions. We help startups and enterprises turn ideas into
                 scalable products with robust technology and user-first design.</p>
               <div className="social-links d-flex mt-4">
-                <Link href=""><i className="bi bi-twitter-x"></i></Link>
-                <Link href=""><i className="bi bi-facebook"></i></Link>
-                <Link href=""><i className="bi bi-instagram"></i></Link>
                 <Link href=""><i className="bi bi-linkedin"></i></Link>
+                <Link href=""><i className="bi bi-twitter-x"></i></Link>
               </div>
             </div>
 
