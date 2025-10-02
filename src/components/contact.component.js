@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState} from "react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -22,14 +22,18 @@ export default function Contact() {
     }));
   };
 
+  useEffect(() => {
+    emailjs.init("S_vPar6ucni6xzWYq"); // Public Key
+  }, []);
+
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
     try {
       emailjs
         .send(
-          "S_vPar6ucni6xzWYq",
-          "pmdc_auto_reply",
+          "service_piku47s",
+          "pmdc_contact_us",
           formData,
         )
         .then(
