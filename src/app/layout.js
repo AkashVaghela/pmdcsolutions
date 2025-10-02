@@ -29,8 +29,8 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.pmdc.solutions/" />
         <meta name="robots" content="index,follow,max-image-preview:large" />
         {/* Favicons */}
-        <link href="/assets/img/favicon.png" rel="icon" />
-        <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="favicon.ico" rel="icon" />
+        <link href="favicon.ico" rel="apple-touch-icon" />
 
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -319,7 +319,7 @@ export default function PortfolioDetails() {
             <Script src="/assets/vendor/purecounter/purecounter_vanilla.js" />
             <Script src="/assets/vendor/swiper/swiper-bundle.min.js" />
             <Script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" />
-            <Script src="/assets/vendor/php-email-form/validate.js" />
+            {/* <Script src="/assets/vendor/php-email-form/validate.js" /> */}
 
             <ThemeInitializer />
         </body>

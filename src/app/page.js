@@ -7,6 +7,7 @@ import ScrollTop from "@/components/scroll-top.component";
 import Preloader from "@/components/preloader.component";
 import FaqAccordion from "@/components/faq-accordian.component";
 import PortfolioGrid from "@/components/portfolio-grid.component";
+import Contact from "@/components/contact.component";
 const ThemeInitializer = dynamic(
   () => import("@/components/theme-initializer.component"),
   { ssr: false }
@@ -1280,133 +1281,7 @@ export default function Home() {
           </div>
 
           {/* Contact Form Section (Overlapping) */}
-          <div id="contact-form" className="container form-container-overlap">
-            <div
-              className="row justify-content-center"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div className="col-lg-10">
-                <div className="contact-form-wrapper">
-                  <h2 className="text-center mb-4">Worried About Who to Trust With Your Digital Future?</h2>
-                  <p className="lead text-center">We listen first, build second. No spam, no upsell &ndash; just a trusted team that treats your project like our own.</p>
-
-                  <form className="php-email-form">
-                    <div className="row g-3">
-                      <div className="col-md-12">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-person"></i>
-                            <input
-                              type="text"
-                              className="form-control"
-                              name="name"
-                              placeholder="Your Name *"
-                              required="true"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-envelope"></i>
-                            <input
-                              type="email"
-                              className="form-control"
-                              name="email"
-                              placeholder="Your Email *"
-                              required="true"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-telephone"></i>
-                            <input
-                              type="tel"
-                              className="form-control"
-                              name="phone"
-                              placeholder="Your Phone Number *"
-                              required="true"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-md-12">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-building"></i>
-                            <input
-                              type="text"
-                              className="form-control"
-                              name="company"
-                              placeholder="Company Name or Website"
-                              required="false"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-chat-dots message-icon"></i>
-                            <textarea
-                              className="form-control"
-                              name="description"
-                              placeholder="Describe Your Project *"
-                              style={{ height: "180px" }}
-                              required="true"
-                            ></textarea>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-md-12">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-paperclip"></i>
-                            <input
-                              type="file"
-                              className="form-control"
-                              name="file"
-                              placeholder="Drag IMAGE, PDF or DOCX file here (optional)"
-                              required="false"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <div className="loading">Loading</div>
-                        <div className="error-message">
-                          Something went wrong. Please try again.
-                        </div>
-                        <div className="sent-message">
-                          Your message has been sent. Thank you!
-                        </div>
-                      </div>
-
-                      <div className="col-12 text-center">
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-submit"
-                        >
-                          Let’s Talk
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Contact />
         </section>
       </main>
 
