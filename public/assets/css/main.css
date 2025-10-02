@@ -2614,7 +2614,7 @@ section,
 
 .contact .form-container-overlap {
   position: relative;
-  margin-top: -150px;
+  /* margin-top: -150px; */
   margin-bottom: 60px;
   z-index: 10;
 }
@@ -2728,9 +2728,9 @@ section,
 }
 
 @media (max-width: 992px) {
-  .contact .form-container-overlap {
+  /* .contact .form-container-overlap {
     margin-top: -120px;
-  }
+  } */
 
   .contact .contact-form-wrapper {
     padding: 30px;
@@ -2742,9 +2742,9 @@ section,
     margin-bottom: 20px;
   }
 
-  .contact .form-container-overlap {
+  /* .contact .form-container-overlap {
     margin-top: -100px;
-  }
+  } */
 
   .contact .contact-form-wrapper {
     padding: 25px;
@@ -2760,9 +2760,9 @@ section,
 }
 
 @media (max-width: 576px) {
-  .contact .form-container-overlap {
+  /* .contact .form-container-overlap {
     margin-top: -80px;
-  }
+  } */
 
   .contact .contact-form-wrapper {
     padding: 20px;

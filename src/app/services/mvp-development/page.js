@@ -3,8 +3,122 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function MvpDevelopmentPage() {
-  const [activeTab, setActiveTab] = useState("overview");
+const PROCESS = [
+  {
+    id: 1,
+    title: "Ideation & Discovery",
+    description: "Understand your vision, target audience, and market needs.",
+  },
+  {
+    id: 2,
+    title: "Feature Prioritization",
+    description: "Identify core features that deliver maximum value.",
+  },
+  {
+    id: 3,
+    title: "Wireframing & Prototyping",
+    description: "Design interactive prototypes to validate ideas early.",
+  },
+  {
+    id: 4,
+    title: "MVP Development",
+    description:
+      "Build functional, scalable, and efficient MVPs with rapid iterations.",
+  },
+  {
+    id: 5,
+    title: "Testing & Feedback",
+    description:
+      "Conduct QA and gather user insights for continuous improvement.",
+  },
+  {
+    id: 6,
+    title: "Launch & Iteration",
+    description:
+      "Deploy MVP quickly, collect data, and refine based on real user feedback.",
+  },
+];
+
+const BENEFITS = [
+  {
+    id: 1,
+    icon: "bi bi-speedometer2",
+    title: "Faster Time-to-Market",
+    description: "Validate ideas quickly with a functional MVP.",
+  },
+  {
+    id: 2,
+    icon: "bi bi-cash-stack",
+    title: "Cost-Effective Development",
+    description: "Focus on core features to reduce unnecessary spending.",
+  },
+  {
+    id: 3,
+    icon: "bi bi-people",
+    title: "User-Centric Design",
+    description: "Build solutions based on real user feedback.",
+  },
+  {
+    id: 4,
+    icon: "bi bi-graph-up",
+    title: "Investor-Ready Product",
+    description: "Demonstrate tangible value to attract funding.",
+  },
+  {
+    id: 5,
+    icon: "bi bi-arrow-repeat",
+    title: "Scalable Architecture",
+    description: "Designed to grow with your product roadmap.",
+  },
+  {
+    id: 6,
+    icon: "bi bi-bar-chart-line",
+    title: "Data-Driven Decisions",
+    description: "Insights from MVP usage guide future iterations.",
+  },
+];
+
+const SERVICES = [
+  {
+    id: 1,
+    icon: "bi bi-clipboard-data",
+    title: "MVP Strategy & Planning",
+    description: "Define scope, features, and roadmap for your MVP.",
+  },
+  {
+    id: 2,
+    icon: "bi bi-pencil-square",
+    title: "Rapid Prototyping",
+    description: "Interactive prototypes to visualize and validate your idea.",
+  },
+  {
+    id: 3,
+    icon: "bi bi-code-slash",
+    title: "Core Feature Development",
+    description: "Build essential functionality with speed and quality.",
+  },
+  {
+    id: 4,
+    icon: "bi bi-phone-landscape",
+    title: "Cross-Platform Development",
+    description: "iOS, Android, and web-ready MVPs.",
+  },
+  {
+    id: 5,
+    icon: "bi bi-check2-circle",
+    title: "Testing & QA",
+    description: "Ensure reliability, usability, and performance.",
+  },
+  {
+    id: 6,
+    icon: "bi bi-life-preserver",
+    title: "Post-Launch Support",
+    description: "Gather feedback, optimize features, and plan next phases.",
+  },
+];
+
+export default function MvpSolutionsPage() {
+  const [activeTab, setActiveTab] = useState("process");
   return (
     <>
       <main className="main" role="main">
@@ -24,8 +138,8 @@ export default function MvpDevelopmentPage() {
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: "MVP Development",
-                  item: "https://www.pmdc.solutions/services/mvp-development",
+                  name: "Mobile Development",
+                  item: "https://www.pmdc.solutions/services/mobile-development",
                 },
               ],
             }),
@@ -37,11 +151,11 @@ export default function MvpDevelopmentPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
-              name: "MVP Development",
+              name: "Mobile Development",
               provider: { "@type": "Organization", name: "PMDC Solutions" },
-              serviceType: "Minimum viable product development",
+              serviceType: "iOS and Android app development",
               areaServed: "Global",
-              url: "https://www.pmdc.solutions/services/mvp-development",
+              url: "https://www.pmdc.solutions/services/mobile-development",
             }),
           }}
         />
@@ -49,9 +163,10 @@ export default function MvpDevelopmentPage() {
           <div className="container position-relative">
             <h1>MVP Development</h1>
             <p>
-              Validate ideas quickly with production-grade MVPs that can scale.
+              Bring your startup ideas to life quickly with a Minimum Viable
+              Product. We help you validate concepts, <br /> attract investors,
+              and launch faster with scalable, functional MVPs.
             </p>
-            {/* <nav className="breadcrumbs"><ol><li><Link href="/">Home</Link></li><li className="current">MVP Development</li></ol></nav> */}
           </div>
         </div>
 
@@ -61,12 +176,13 @@ export default function MvpDevelopmentPage() {
               <div className="col-lg-8 order-lg-1 order-2">
                 <div className="service-main-content">
                   <div className="service-header" data-aos="fade-up">
-                    <h1>Launch Faster, Learn Sooner</h1>
+                    <h1>From Idea to Impact, Faster</h1>
                     <p className="lead">
-                      Validate your idea with a production‑grade MVP. We
-                      prioritize the smallest lovable feature set, ship quickly
-                      with quality, and set up analytics to learn from real
-                      users and iterate with confidence.
+                      Our MVP development service turns your vision into a
+                      working product quickly and efficiently. We focus on the
+                      core features your users need most, helping you test,
+                      learn, and grow with minimal risk while maximizing early
+                      market traction.
                     </p>
                   </div>
 
@@ -76,18 +192,6 @@ export default function MvpDevelopmentPage() {
                     data-aos-delay="200"
                   >
                     <ul className="nav nav-tabs" role="tablist">
-                      <li className="nav-item">
-                        <button
-                          className={`nav-link ${
-                            activeTab === "overview" ? "active" : ""
-                          }`}
-                          onClick={() => setActiveTab("overview")}
-                          type="button"
-                          role="tab"
-                        >
-                          <i className="bi bi-info-circle"></i> Overview
-                        </button>
-                      </li>
                       <li className="nav-item">
                         <button
                           className={`nav-link ${
@@ -112,51 +216,8 @@ export default function MvpDevelopmentPage() {
                           <i className="bi bi-graph-up-arrow"></i> Benefits
                         </button>
                       </li>
-                      <li className="nav-item">
-                        <button
-                          className={`nav-link ${
-                            activeTab === "tools" ? "active" : ""
-                          }`}
-                          onClick={() => setActiveTab("tools")}
-                          type="button"
-                          role="tab"
-                        >
-                          <i className="bi bi-hammer"></i> Tools & Technologies
-                        </button>
-                      </li>
                     </ul>
                     <div className="tab-content">
-                      <div
-                        className={`tab-pane fade ${
-                          activeTab === "overview" ? "show active" : ""
-                        }`}
-                        id="tab-overview"
-                        role="tabpanel"
-                      >
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Right-Sized Scope</h3>
-                              <p>
-                                Smallest lovable product to validate demand
-                                fast.
-                              </p>
-                              <p>
-                                Architecture that scales post‑PMF without
-                                re‑writes.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <img
-                              src="/assets/img/services/services-7.webp"
-                              alt="MVP Development"
-                              className="img-fluid rounded"
-                              loading="lazy"
-                            />
-                          </div>
-                        </div>
-                      </div>
                       <div
                         className={`tab-pane fade ${
                           activeTab === "process" ? "show active" : ""
@@ -165,34 +226,19 @@ export default function MvpDevelopmentPage() {
                         role="tabpanel"
                       >
                         <div className="process-timeline">
-                          <div className="timeline-item">
-                            <div className="timeline-marker">01</div>
-                            <div className="timeline-content">
-                              <h4>Define</h4>
-                              <p>Hypotheses, metrics, and roadmap.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">02</div>
-                            <div className="timeline-content">
-                              <h4>Build</h4>
-                              <p>Lean implementation with speed.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">03</div>
-                            <div className="timeline-content">
-                              <h4>Measure</h4>
-                              <p>Track real usage and feedback.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">04</div>
-                            <div className="timeline-content">
-                              <h4>Iterate</h4>
-                              <p>Refine and expand as needed.</p>
-                            </div>
-                          </div>
+                          {PROCESS.map((process, index) => {
+                            return (
+                              <div className="timeline-item" key={process.id}>
+                                <div className="timeline-marker">
+                                  0{index + 1}
+                                </div>
+                                <div className="timeline-content">
+                                  <h4>{process.title}</h4>
+                                  <p>{process.description}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                       <div
@@ -203,76 +249,26 @@ export default function MvpDevelopmentPage() {
                         role="tabpanel"
                       >
                         <div className="row g-4">
-                          <div className="col-md-6">
-                            <div className="benefit-card">
-                              <div className="benefit-icon">
-                                <i className="bi bi-rocket-takeoff"></i>
+                          {BENEFITS.map((benefit) => {
+                            return (
+                              <div className="col-md-6" key={benefit.id}>
+                                <div className="benefit-card">
+                                  <div className="benefit-icon">
+                                    <i className={`bi ${benefit.icon}`}></i>
+                                  </div>
+                                  <h4>{benefit.title}</h4>
+                                  <p>{benefit.description}</p>
+                                </div>
                               </div>
-                              <h4>Speed to Market</h4>
-                              <p>Get to users quickly.</p>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="benefit-card">
-                              <div className="benefit-icon">
-                                <i className="bi bi-cash-coin"></i>
-                              </div>
-                              <h4>Capital Efficient</h4>
-                              <p>Invest where it matters.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className={`tab-pane fade ${
-                          activeTab === "tools" ? "show active" : ""
-                        }`}
-                        id="tab-tools"
-                        role="tabpanel"
-                      >
-                        <div
-                          className="row g-4"
-                          role="list"
-                          aria-label="MVP development tools and technologies"
-                        >
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Stack</h3>
-                              <ul role="list">
-                                <li role="listitem">
-                                  Next.js · React · TypeScript
-                                </li>
-                                <li role="listitem">
-                                  Node.js · PostgreSQL · Prisma
-                                </li>
-                                <li role="listitem">
-                                  Auth · Payments · File storage
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Ops & Learning</h3>
-                              <ul role="list">
-                                <li role="listitem">
-                                  Vercel/AWS · Docker · CI/CD
-                                </li>
-                                <li role="listitem">
-                                  Analytics: GA4 · PostHog
-                                </li>
-                                <li role="listitem">
-                                  Feature flags · A/B testing
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div className="col-lg-4 order-lg-2 order-1">
                 <div className="service-sidebar" data-aos="fade-left">
                   <div
@@ -280,15 +276,36 @@ export default function MvpDevelopmentPage() {
                     data-aos="zoom-in"
                     data-aos-delay="100"
                   >
-                    <h3>Validate Faster</h3>
-                    <p>Speak with our MVP team today.</p>
+                    <h3>Discuss Your App</h3>
+                    <p>Cut time-to-market with our mobile experts.</p>
                     <Link href="/#contact-form" className="btn-primary">
-                      Start now
+                      Get in touch
                     </Link>
                     <span className="guarantee">
                       <i className="bi bi-shield-check"></i> 100% Satisfaction
                       Guarantee
                     </span>
+                  </div>
+
+                  <div
+                    className="service-features-list"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <h4>What We Offer</h4>
+                    <ul>
+                      {SERVICES.map((service) => {
+                        return (
+                          <li key={service.id}>
+                            <i className={`bi ${service.icon}`}></i>
+                            <div>
+                              <h5>{service.title}</h5>
+                              <p>{service.description}</p>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 </div>
               </div>

@@ -3,8 +3,124 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function EcommerceSolutionsPage() {
-  const [activeTab, setActiveTab] = useState("overview");
+const PROCESS = [
+  {
+    id: 1,
+    title: "Discovery & Strategy",
+    description:
+      "Understand business goals, target customers, and product offerings.",
+  },
+  {
+    id: 2,
+    title: "Wireframing & UI/UX Design",
+    description: "Plan intuitive layouts and engaging shopping experiences.",
+  },
+  {
+    id: 3,
+    title: "Platform Development",
+    description:
+      "Build scalable, secure, and responsive e-commerce websites or apps.",
+  },
+  {
+    id: 4,
+    title: "Payment & Integration",
+    description:
+      "Integrate secure payment gateways, inventory, and third-party services.",
+  },
+  {
+    id: 5,
+    title: "Testing & Quality Assurance",
+    description: "Ensure flawless functionality, security, and performance.",
+  },
+  {
+    id: 6,
+    title: "Launch & Optimization",
+    description:
+      "Deploy the store and continuously optimize for conversions and sales.",
+  },
+];
+
+const BENEFITS = [
+  {
+    id: 1,
+    icon: "bi bi-cart-check",
+    title: "Boost Online Sales",
+    description: "Streamlined shopping journeys that encourage purchases.",
+  },
+  {
+    id: 2,
+    icon: "bi bi-shield-lock",
+    title: "Secure & Reliable",
+    description: "PCI-compliant payment systems and secure data handling.",
+  },
+  {
+    id: 3,
+    icon: "bi bi-phone-landscape",
+    title: "Responsive & Mobile-Friendly",
+    description: "Seamless shopping across devices.",
+  },
+  {
+    id: 4,
+    icon: "bi bi-arrow-repeat",
+    title: "Customizable & Scalable",
+    description: "Tailored solutions to match your business needs.",
+  },
+  {
+    id: 5,
+    icon: "bi bi-people",
+    title: "Enhanced Customer Experience",
+    description: "Smooth navigation and fast checkout reduce cart abandonment.",
+  },
+  {
+    id: 6,
+    icon: "bi bi-bar-chart-line",
+    title: "Analytics & Insights",
+    description:
+      "Track performance, sales, and customer behavior to improve strategies.",
+  },
+];
+
+const SERVICES = [
+  {
+    id: 1,
+    icon: "bi bi-code-slash",
+    title: "Custom E-Commerce Development",
+    description: "Tailored stores for any business size.",
+  },
+  {
+    id: 2,
+    icon: "bi bi-cart-check",
+    title: "Shopping Cart & Checkout Integration",
+    description: "Secure and user-friendly transaction flows.",
+  },
+  {
+    id: 3,
+    icon: "bi bi-credit-card",
+    title: "Payment Gateway Integration",
+    description: "Support for multiple payment methods.",
+  },
+  {
+    id: 4,
+    icon: "bi bi-box-seam",
+    title: "Inventory & Order Management",
+    description: "Automated tools to manage products and orders efficiently.",
+  },
+  {
+    id: 5,
+    icon: "bi bi-phone-landscape",
+    title: "Mobile Commerce Solutions",
+    description: "Optimized shopping experience for mobile users.",
+  },
+  {
+    id: 6,
+    icon: "bi bi-gear",
+    title: "Maintenance & Support",
+    description: "Continuous updates, security checks, and enhancements.",
+  },
+];
+
+export default function ECommerceSolutionsPage() {
+  const [activeTab, setActiveTab] = useState("process");
   return (
     <>
       <main className="main" role="main">
@@ -24,8 +140,8 @@ export default function EcommerceSolutionsPage() {
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: "E‑Commerce Solutions",
-                  item: "https://www.pmdc.solutions/services/e-commerce-solutions",
+                  name: "Mobile Development",
+                  item: "https://www.pmdc.solutions/services/mobile-development",
                 },
               ],
             }),
@@ -37,22 +153,23 @@ export default function EcommerceSolutionsPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
-              name: "E‑Commerce Solutions",
+              name: "Mobile Development",
               provider: { "@type": "Organization", name: "PMDC Solutions" },
-              serviceType: "E‑commerce development and optimization",
+              serviceType: "iOS and Android app development",
               areaServed: "Global",
-              url: "https://www.pmdc.solutions/services/e-commerce-solutions",
+              url: "https://www.pmdc.solutions/services/mobile-development",
             }),
           }}
         />
         <div className="page-title dark-background" data-aos="fade">
           <div className="container position-relative">
-            <h1>E‑Commerce Solutions</h1>
+            <h1>E-Commerce Solutions</h1>
             <p>
-              Fast storefronts, secure payments, and operational efficiency from
-              cart to fulfillment.
+              Launch powerful, user-friendly online stores that drive sales and
+              enhance customer experience. From product catalogues to secure
+              checkout, <br /> we create e-commerce platforms that convert
+              visitors into loyal customers.
             </p>
-            {/* <nav className="breadcrumbs"><ol><li><Link href="/">Home</Link></li><li className="current">E‑Commerce Solutions</li></ol></nav> */}
           </div>
         </div>
 
@@ -62,33 +179,22 @@ export default function EcommerceSolutionsPage() {
               <div className="col-lg-8 order-lg-1 order-2">
                 <div className="service-main-content">
                   <div className="service-header" data-aos="fade-up">
-                    <h1>Sell Smarter, Scale Faster</h1>
+                    <h1>Online Stores That Sell and Delight</h1>
                     <p className="lead">
-                      We build lightning‑fast storefronts with secure checkout,
-                      reliable inventory, and seamless integrations. From
-                      Shopify and WooCommerce to headless with Next.js, we
-                      optimize SEO, performance, and conversion rate to increase
-                      revenue.
+                      Our e-commerce solutions go beyond transactions. We craft
+                      seamless shopping experiences that engage your audience,
+                      build trust, and boost conversions. Every feature, from
+                      browsing to checkout, is designed to maximize sales and
+                      customer satisfaction.
                     </p>
                   </div>
+
                   <div
                     className="service-tabs"
                     data-aos="fade-up"
                     data-aos-delay="200"
                   >
                     <ul className="nav nav-tabs" role="tablist">
-                      <li className="nav-item">
-                        <button
-                          className={`nav-link ${
-                            activeTab === "overview" ? "active" : ""
-                          }`}
-                          onClick={() => setActiveTab("overview")}
-                          type="button"
-                          role="tab"
-                        >
-                          <i className="bi bi-info-circle"></i> Overview
-                        </button>
-                      </li>
                       <li className="nav-item">
                         <button
                           className={`nav-link ${
@@ -113,51 +219,8 @@ export default function EcommerceSolutionsPage() {
                           <i className="bi bi-graph-up-arrow"></i> Benefits
                         </button>
                       </li>
-                      <li className="nav-item">
-                        <button
-                          className={`nav-link ${
-                            activeTab === "tools" ? "active" : ""
-                          }`}
-                          onClick={() => setActiveTab("tools")}
-                          type="button"
-                          role="tab"
-                        >
-                          <i className="bi bi-hammer"></i> Tools & Technologies
-                        </button>
-                      </li>
                     </ul>
                     <div className="tab-content">
-                      <div
-                        className={`tab-pane fade ${
-                          activeTab === "overview" ? "show active" : ""
-                        }`}
-                        id="tab-overview"
-                        role="tabpanel"
-                      >
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Headless or Monolithic</h3>
-                              <p>
-                                Choose Shopify/Plus, WooCommerce, or headless
-                                Next.js to match goals and scale.
-                              </p>
-                              <p>
-                                SEO‑ready architecture, clean IA, and fast UX
-                                that converts.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <img
-                              src="/assets/img/services/services-2.webp"
-                              alt="E‑commerce Solutions"
-                              className="img-fluid rounded"
-                              loading="lazy"
-                            />
-                          </div>
-                        </div>
-                      </div>
                       <div
                         className={`tab-pane fade ${
                           activeTab === "process" ? "show active" : ""
@@ -166,34 +229,19 @@ export default function EcommerceSolutionsPage() {
                         role="tabpanel"
                       >
                         <div className="process-timeline">
-                          <div className="timeline-item">
-                            <div className="timeline-marker">01</div>
-                            <div className="timeline-content">
-                              <h4>Plan</h4>
-                              <p>Catalog, promotions, and fulfillment flows.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">02</div>
-                            <div className="timeline-content">
-                              <h4>Build</h4>
-                              <p>Storefront + checkout + integrations.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">03</div>
-                            <div className="timeline-content">
-                              <h4>Optimize</h4>
-                              <p>Performance, SEO, and CRO.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">04</div>
-                            <div className="timeline-content">
-                              <h4>Launch</h4>
-                              <p>Go-live with monitoring & analytics.</p>
-                            </div>
-                          </div>
+                          {PROCESS.map((process, index) => {
+                            return (
+                              <div className="timeline-item" key={process.id}>
+                                <div className="timeline-marker">
+                                  0{index + 1}
+                                </div>
+                                <div className="timeline-content">
+                                  <h4>{process.title}</h4>
+                                  <p>{process.description}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                       <div
@@ -204,72 +252,26 @@ export default function EcommerceSolutionsPage() {
                         role="tabpanel"
                       >
                         <div className="row g-4">
-                          <div className="col-md-6">
-                            <div className="benefit-card">
-                              <div className="benefit-icon">
-                                <i className="bi bi-bag"></i>
+                          {BENEFITS.map((benefit) => {
+                            return (
+                              <div className="col-md-6" key={benefit.id}>
+                                <div className="benefit-card">
+                                  <div className="benefit-icon">
+                                    <i className={`bi ${benefit.icon}`}></i>
+                                  </div>
+                                  <h4>{benefit.title}</h4>
+                                  <p>{benefit.description}</p>
+                                </div>
                               </div>
-                              <h4>Higher Conversion</h4>
-                              <p>Fast UX boosts revenue.</p>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="benefit-card">
-                              <div className="benefit-icon">
-                                <i className="bi bi-truck"></i>
-                              </div>
-                              <h4>Operational Efficiency</h4>
-                              <p>Automate fulfillment and returns.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className={`tab-pane fade ${
-                          activeTab === "tools" ? "show active" : ""
-                        }`}
-                        id="tab-tools"
-                        role="tabpanel"
-                      >
-                        <div
-                          className="row g-4"
-                          role="list"
-                          aria-label="E-commerce tools and technologies"
-                        >
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Platforms</h3>
-                              <ul role="list">
-                                <li role="listitem">
-                                  Shopify/Plus · WooCommerce
-                                </li>
-                                <li role="listitem">
-                                  Headless: Next.js · Commerce APIs
-                                </li>
-                                <li role="listitem">PIM · OMS integrations</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Checkout & Ops</h3>
-                              <ul role="list">
-                                <li role="listitem">Stripe · Adyen · PayPal</li>
-                                <li role="listitem">
-                                  TaxJar/Avalara · Shippo/ShipStation
-                                </li>
-                                <li role="listitem">
-                                  SEO · CRO · Analytics (GA4)
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div className="col-lg-4 order-lg-2 order-1">
                 <div className="service-sidebar" data-aos="fade-left">
                   <div
@@ -277,15 +279,36 @@ export default function EcommerceSolutionsPage() {
                     data-aos="zoom-in"
                     data-aos-delay="100"
                   >
-                    <h3>Grow Your Store</h3>
-                    <p>Let’s boost conversion and AOV.</p>
+                    <h3>Discuss Your App</h3>
+                    <p>Cut time-to-market with our mobile experts.</p>
                     <Link href="/#contact-form" className="btn-primary">
-                      Talk to ecommerce
+                      Get in touch
                     </Link>
                     <span className="guarantee">
                       <i className="bi bi-shield-check"></i> 100% Satisfaction
                       Guarantee
                     </span>
+                  </div>
+
+                  <div
+                    className="service-features-list"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <h4>What We Offer</h4>
+                    <ul>
+                      {SERVICES.map((service) => {
+                        return (
+                          <li key={service.id}>
+                            <i className={`bi ${service.icon}`}></i>
+                            <div>
+                              <h5>{service.title}</h5>
+                              <p>{service.description}</p>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 </div>
               </div>

@@ -3,9 +3,120 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const PROCESS = [
+  {
+    id: 1,
+    title: "Discovery & Analysis",
+    description: "Understand your workflows, pain points, and business goals.",
+  },
+  {
+    id: 2,
+    title: "Solution Architecture",
+    description: "Design scalable, modular, and maintainable systems.",
+  },
+  {
+    id: 3,
+    title: "Development & Integration",
+    description: "Build custom software, connect APIs, and automate processes.",
+  },
+  {
+    id: 4,
+    title: "Testing & Quality Assurance",
+    description: "Ensure reliability, security, and seamless functionality.",
+  },
+  {
+    id: 5,
+    title: "Deployment & Support",
+    description:
+      "Launch with confidence and provide ongoing maintenance and enhancements.",
+  },
+  {
+    id: 6,
+    title: "Optimization & Scaling",
+    description: "Continuously improve and scale as your business grows.",
+  },
+];
+
+const BENEFITS = [
+  {
+    id: 1,
+    icon: "bi bi-tools",
+    title: "Tailored to Your Business",
+    description: "Solutions match your exact needs, no one-size-fits-all.",
+  },
+  {
+    id: 2,
+    icon: "bi bi-speedometer2",
+    title: "Increased Efficiency",
+    description: "Automate repetitive tasks and reduce operational overhead.",
+  },
+  {
+    id: 3,
+    icon: "bi bi-plug",
+    title: "Seamless Integration",
+    description: "Connect multiple platforms and tools for a unified system.",
+  },
+  {
+    id: 4,
+    icon: "bi bi-arrow-repeat",
+    title: "Scalable & Future-Proof",
+    description: "Built to grow with your evolving business.",
+  },
+  {
+    id: 5,
+    icon: "bi bi-bar-chart-line",
+    title: "Actionable Insights",
+    description: "Track metrics and make informed decisions.",
+  },
+  {
+    id: 6,
+    icon: "bi bi-award",
+    title: "Competitive Advantage",
+    description: "Unique solutions that set you apart from competitors.",
+  },
+];
+
+const SERVICES = [
+  {
+    id: 1,
+    icon: "bi bi-phone",
+    title: "Custom Web & Mobile Applications",
+    description: "Build tools specific to your workflows.",
+  },
+  {
+    id: 2,
+    icon: "bi bi-plug",
+    title: "API Development & Integration",
+    description: "Connect third-party platforms for efficiency.",
+  },
+  {
+    id: 3,
+    icon: "bi bi-lightning",
+    title: "Automation Solutions",
+    description: "Streamline repetitive tasks to save time and costs.",
+  },
+  {
+    id: 4,
+    icon: "bi bi-building",
+    title: "Enterprise Systems",
+    description: "Large-scale solutions for complex business operations.",
+  },
+  {
+    id: 5,
+    icon: "bi bi-bar-chart-line",
+    title: "Dashboards & Analytics",
+    description: "Monitor KPIs and make data-driven decisions.",
+  },
+  {
+    id: 6,
+    icon: "bi bi-gear",
+    title: "Maintenance & Support",
+    description: "Continuous updates, improvements, and troubleshooting.",
+  },
+];
 
 export default function CustomSolutionsPage() {
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("process");
   return (
     <>
       <main className="main" role="main">
@@ -25,8 +136,8 @@ export default function CustomSolutionsPage() {
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: "Custom Solutions",
-                  item: "https://www.pmdc.solutions/services/custom-solutions",
+                  name: "Mobile Development",
+                  item: "https://www.pmdc.solutions/services/mobile-development",
                 },
               ],
             }),
@@ -38,21 +149,23 @@ export default function CustomSolutionsPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
-              name: "Custom Solutions",
+              name: "Mobile Development",
               provider: { "@type": "Organization", name: "PMDC Solutions" },
-              serviceType: "Custom software development",
+              serviceType: "iOS and Android app development",
               areaServed: "Global",
-              url: "https://www.pmdc.solutions/services/custom-solutions",
+              url: "https://www.pmdc.solutions/services/mobile-development",
             }),
           }}
         />
         <div className="page-title dark-background" data-aos="fade">
           <div className="container position-relative">
-            <h1>Custom Solutions</h1>
+            <h1>Custom Software Solutions</h1>
             <p>
-              Tailored systems to automate workflows and solve complex problems.
+              ailored software solutions that solve your unique business
+              challenges. From automation and integrations to enterprise
+              systems, <br /> we build tools that streamline operations and
+              accelerate growth.
             </p>
-            {/* <nav className="breadcrumbs"><ol><li><Link href="/">Home</Link></li><li className="current">Custom Solutions</li></ol></nav> */}
           </div>
         </div>
 
@@ -62,31 +175,22 @@ export default function CustomSolutionsPage() {
               <div className="col-lg-8 order-lg-1 order-2">
                 <div className="service-main-content">
                   <div className="service-header" data-aos="fade-up">
-                    <h1>Built Around Your Business</h1>
+                    <h1>Solutions Built Around Your Needs</h1>
                     <p className="lead">
-                      We design custom software that automates workflows,
-                      integrates your tools, and scales with your growth—all
-                      with SEO, security, and accessibility in mind.
+                      Our custom solutions are designed to fit your exact
+                      requirements — no compromises. We listen, analyze, and
+                      craft software that automates processes, integrates
+                      systems, and provides actionable insights, helping your
+                      business operate smarter, faster, and more efficiently.
                     </p>
                   </div>
+
                   <div
                     className="service-tabs"
                     data-aos="fade-up"
                     data-aos-delay="200"
                   >
                     <ul className="nav nav-tabs" role="tablist">
-                      <li className="nav-item">
-                        <button
-                          className={`nav-link ${
-                            activeTab === "overview" ? "active" : ""
-                          }`}
-                          onClick={() => setActiveTab("overview")}
-                          type="button"
-                          role="tab"
-                        >
-                          <i className="bi bi-info-circle"></i> Overview
-                        </button>
-                      </li>
                       <li className="nav-item">
                         <button
                           className={`nav-link ${
@@ -111,50 +215,8 @@ export default function CustomSolutionsPage() {
                           <i className="bi bi-graph-up-arrow"></i> Benefits
                         </button>
                       </li>
-                      <li className="nav-item">
-                        <button
-                          className={`nav-link ${
-                            activeTab === "tools" ? "active" : ""
-                          }`}
-                          onClick={() => setActiveTab("tools")}
-                          type="button"
-                          role="tab"
-                        >
-                          <i className="bi bi-hammer"></i> Tools & Technologies
-                        </button>
-                      </li>
                     </ul>
                     <div className="tab-content">
-                      <div
-                        className={`tab-pane fade ${
-                          activeTab === "overview" ? "show active" : ""
-                        }`}
-                        id="tab-overview"
-                        role="tabpanel"
-                      >
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Systems that Fit</h3>
-                              <p>
-                                We design software around your operations—not
-                                the other way around.
-                              </p>
-                              <p>
-                                APIs, integrations, and data pipelines included.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <img
-                              src="/assets/img/services/services-4.webp"
-                              alt="Custom Solutions"
-                              className="img-fluid rounded"
-                              loading="lazy"
-                            />
-                          </div>
-                        </div>
-                      </div>
                       <div
                         className={`tab-pane fade ${
                           activeTab === "process" ? "show active" : ""
@@ -163,34 +225,19 @@ export default function CustomSolutionsPage() {
                         role="tabpanel"
                       >
                         <div className="process-timeline">
-                          <div className="timeline-item">
-                            <div className="timeline-marker">01</div>
-                            <div className="timeline-content">
-                              <h4>Discovery</h4>
-                              <p>Process mapping and requirements.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">02</div>
-                            <div className="timeline-content">
-                              <h4>Design</h4>
-                              <p>Solution architecture and UX.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">03</div>
-                            <div className="timeline-content">
-                              <h4>Build</h4>
-                              <p>Iterative delivery with demos.</p>
-                            </div>
-                          </div>
-                          <div className="timeline-item">
-                            <div className="timeline-marker">04</div>
-                            <div className="timeline-content">
-                              <h4>Adopt</h4>
-                              <p>Training, rollout, and support.</p>
-                            </div>
-                          </div>
+                          {PROCESS.map((process, index) => {
+                            return (
+                              <div className="timeline-item" key={process.id}>
+                                <div className="timeline-marker">
+                                  0{index + 1}
+                                </div>
+                                <div className="timeline-content">
+                                  <h4>{process.title}</h4>
+                                  <p>{process.description}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                       <div
@@ -201,70 +248,26 @@ export default function CustomSolutionsPage() {
                         role="tabpanel"
                       >
                         <div className="row g-4">
-                          <div className="col-md-6">
-                            <div className="benefit-card">
-                              <div className="benefit-icon">
-                                <i className="bi bi-puzzle"></i>
+                          {BENEFITS.map((benefit) => {
+                            return (
+                              <div className="col-md-6" key={benefit.id}>
+                                <div className="benefit-card">
+                                  <div className="benefit-icon">
+                                    <i className={`bi ${benefit.icon}`}></i>
+                                  </div>
+                                  <h4>{benefit.title}</h4>
+                                  <p>{benefit.description}</p>
+                                </div>
                               </div>
-                              <h4>Perfect Fit</h4>
-                              <p>Optimized for your workflows.</p>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="benefit-card">
-                              <div className="benefit-icon">
-                                <i className="bi bi-diagram-2"></i>
-                              </div>
-                              <h4>Integrated</h4>
-                              <p>Connect tools you already use.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className={`tab-pane fade ${
-                          activeTab === "tools" ? "show active" : ""
-                        }`}
-                        id="tab-tools"
-                        role="tabpanel"
-                      >
-                        <div
-                          className="row g-4"
-                          role="list"
-                          aria-label="Custom solutions tools and technologies"
-                        >
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Tech Stack</h3>
-                              <ul role="list">
-                                <li role="listitem">
-                                  Next.js · React · TypeScript
-                                </li>
-                                <li role="listitem">Node.js · Python · Go</li>
-                                <li role="listitem">
-                                  PostgreSQL · Redis · Kafka
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Integrations</h3>
-                              <ul role="list">
-                                <li role="listitem">
-                                  Salesforce · HubSpot · Slack
-                                </li>
-                                <li role="listitem">Stripe · PayPal · Plaid</li>
-                                <li role="listitem">Auth0 · Okta · SSO</li>
-                              </ul>
-                            </div>
-                          </div>
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div className="col-lg-4 order-lg-2 order-1">
                 <div className="service-sidebar" data-aos="fade-left">
                   <div
@@ -272,15 +275,36 @@ export default function CustomSolutionsPage() {
                     data-aos="zoom-in"
                     data-aos-delay="100"
                   >
-                    <h3>Let’s Architect It</h3>
-                    <p>Talk to our solutions team.</p>
+                    <h3>Discuss Your App</h3>
+                    <p>Cut time-to-market with our mobile experts.</p>
                     <Link href="/#contact-form" className="btn-primary">
-                      Plan a solution
+                      Get in touch
                     </Link>
                     <span className="guarantee">
                       <i className="bi bi-shield-check"></i> 100% Satisfaction
                       Guarantee
                     </span>
+                  </div>
+
+                  <div
+                    className="service-features-list"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <h4>What We Offer</h4>
+                    <ul>
+                      {SERVICES.map((service) => {
+                        return (
+                          <li key={service.id}>
+                            <i className={`bi ${service.icon}`}></i>
+                            <div>
+                              <h5>{service.title}</h5>
+                              <p>{service.description}</p>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 </div>
               </div>

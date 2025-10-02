@@ -1,10 +1,126 @@
 "use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from "next/link";
+import { useState } from "react";
+
+const PROCESS = [
+  {
+    id: 1,
+    title: "Discovery & Planning",
+    description:
+      "Understand goals, audience, and technical requirements to shape the project roadmap.",
+  },
+  {
+    id: 2,
+    title: "Design & Prototyping",
+    description:
+      "Collaborate on UI/UX designs and functional prototypes to validate structure.",
+  },
+  {
+    id: 3,
+    title: "Development & Coding",
+    description:
+      "Write clean, modular, and optimized code for web applications or websites.",
+  },
+  {
+    id: 4,
+    title: "Testing & Quality Assurance",
+    description:
+      "Comprehensive testing for performance, security, and cross-device functionality.",
+  },
+  {
+    id: 5,
+    title: "Launch & Deployment",
+    description:
+      "Seamless deployment with full configuration and post-launch support.",
+  },
+  {
+    id: 6,
+    title: "Maintenance & Updates",
+    description:
+      "Ongoing improvements, security updates, and performance optimization.",
+  },
+];
+
+const BENEFITS = [
+  {
+    id: 1,
+    icon: "bi bi-bar-chart-line",
+    title: "Scalable & Flexible Solutions",
+    description: "Grow your web platform as your business expands.",
+  },
+  {
+    id: 2,
+    icon: "bi bi-people",
+    title: "Enhanced User Experience",
+    description: "Smooth, responsive, and intuitive web interactions.",
+  },
+  {
+    id: 3,
+    icon: "bi bi-speedometer2",
+    title: "High Performance & Speed",
+    description: "Fast-loading pages to reduce bounce rates.",
+  },
+  {
+    id: 4,
+    icon: "bi bi-shield-lock",
+    title: "Secure & Reliable Systems",
+    description: "Protect your data and your users’ trust.",
+  },
+  {
+    id: 5,
+    icon: "bi bi-search",
+    title: "SEO-Friendly Development",
+    description: "Optimized to rank higher and attract more visitors.",
+  },
+  {
+    id: 6,
+    icon: "bi bi-life-preserver",
+    title: "End-to-End Support",
+    description: "From planning to maintenance, we handle everything.",
+  },
+];
+
+const SERVICES = [
+  {
+    id: 1,
+    icon: "bi bi-code-slash",
+    title: "Custom Web Development",
+    description:
+      "Tailored websites and applications to meet your unique business needs.",
+  },
+  {
+    id: 2,
+    icon: "bi bi-phone-landscape",
+    title: "Responsive Design & Development",
+    description:
+      "Web experiences that look and perform perfectly on any device.",
+  },
+  {
+    id: 3,
+    icon: "bi bi-plug",
+    title: "API Development & Integration",
+    description:
+      "Seamless integration with third-party services for enhanced functionality.",
+  },
+  {
+    id: 4,
+    icon: "bi bi-lightning",
+    title: "Performance Optimization",
+    description:
+      "Fast-loading, SEO-friendly, and scalable websites for peak performance.",
+  },
+  {
+    id: 5,
+    icon: "bi bi-gear",
+    title: "Maintenance & Support",
+    description:
+      "Ongoing updates, monitoring, and improvements to keep your web presence strong.",
+  },
+];
 
 export default function WebDevelopmentPage() {
-  const [activeTab, setActiveTab] = useState('overview');
+  const [activeTab, setActiveTab] = useState("process");
   return (
     <>
       <main className="main" role="main">
@@ -14,11 +130,21 @@ export default function WebDevelopmentPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
-              "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pmdc.solutions/"},
-                {"@type": "ListItem", "position": 2, "name": "Web Development", "item": "https://www.pmdc.solutions/services/web-development"}
-              ]
-            })
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://www.pmdc.solutions/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Mobile Development",
+                  item: "https://www.pmdc.solutions/services/mobile-development",
+                },
+              ],
+            }),
           }}
         />
         <script
@@ -27,24 +153,23 @@ export default function WebDevelopmentPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
-              "name": "Web Development",
-              "provider": {"@type": "Organization", "name": "PMDC Solutions"},
-              "serviceType": "Web application development",
-              "areaServed": "Global",
-              "url": "https://www.pmdc.solutions/services/web-development"
-            })
+              name: "Mobile Development",
+              provider: { "@type": "Organization", name: "PMDC Solutions" },
+              serviceType: "iOS and Android app development",
+              areaServed: "Global",
+              url: "https://www.pmdc.solutions/services/mobile-development",
+            }),
           }}
         />
         <div className="page-title dark-background" data-aos="fade">
           <div className="container position-relative">
             <h1>Web Development</h1>
-            <p>High-performance, SEO-friendly, and scalable web apps built with modern stacks.</p>
-            {/* <nav className="breadcrumbs">
-              <ol>
-                <li><Link href="/">Home</Link></li>
-                <li className="current">Web Development</li>
-              </ol>
-            </nav> */}
+            <p>
+              Build fast, reliable, and scalable web solutions that power your
+              business. From dynamic websites to complex web applications,{" "}
+              <br /> we turn your vision into reality with clean,
+              high-performing code.
+            </p>
           </div>
         </div>
 
@@ -53,69 +178,92 @@ export default function WebDevelopmentPage() {
             <div className="row gy-5">
               <div className="col-lg-8 order-lg-1 order-2">
                 <div className="service-main-content">
-                <div className="service-header" data-aos="fade-up">
-                    <h1>Fast, Secure, and Maintainable</h1>
-                    <p className="lead">We build SEO-first, Core Web Vitals–optimized web apps with clean architecture and accessible UX. From landing pages to enterprise SaaS, our Next.js and Node.js experts ship scalable, secure, and maintainable products that rank well and convert.</p>
+                  <div className="service-header" data-aos="fade-up">
+                    <h1>High-Quality Mobile Experiences</h1>
+                    <p className="lead">
+                      We craft App Store and Play Store–ready apps with native
+                      performance, accessibility, and strong analytics. Our
+                      Swift, Kotlin, and cross‑platform teams ship secure,
+                      scalable apps that users love and that rank in search.
+                    </p>
                   </div>
 
-                  <div className="service-tabs" data-aos="fade-up" data-aos-delay="200">
+                  <div
+                    className="service-tabs"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
                     <ul className="nav nav-tabs" role="tablist">
-                      <li className="nav-item"><button className={`nav-link ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')} type="button" role="tab"><i className="bi bi-info-circle"></i> Overview</button></li>
-                      <li className="nav-item"><button className={`nav-link ${activeTab === 'process' ? 'active' : ''}`} onClick={() => setActiveTab('process')} type="button" role="tab"><i className="bi bi-diagram-3"></i> Process</button></li>
-                      <li className="nav-item"><button className={`nav-link ${activeTab === 'benefits' ? 'active' : ''}`} onClick={() => setActiveTab('benefits')} type="button" role="tab"><i className="bi bi-graph-up-arrow"></i> Benefits</button></li>
-                      <li className="nav-item"><button className={`nav-link ${activeTab === 'tools' ? 'active' : ''}`} onClick={() => setActiveTab('tools')} type="button" role="tab"><i className="bi bi-hammer"></i> Tools & Technologies</button></li>
+                      <li className="nav-item">
+                        <button
+                          className={`nav-link ${
+                            activeTab === "process" ? "active" : ""
+                          }`}
+                          onClick={() => setActiveTab("process")}
+                          type="button"
+                          role="tab"
+                        >
+                          <i className="bi bi-diagram-3"></i> Process
+                        </button>
+                      </li>
+                      <li className="nav-item">
+                        <button
+                          className={`nav-link ${
+                            activeTab === "benefits" ? "active" : ""
+                          }`}
+                          onClick={() => setActiveTab("benefits")}
+                          type="button"
+                          role="tab"
+                        >
+                          <i className="bi bi-graph-up-arrow"></i> Benefits
+                        </button>
+                      </li>
                     </ul>
                     <div className="tab-content">
-                      <div className={`tab-pane fade ${activeTab === 'overview' ? 'show active' : ''}`} id="tab-overview" role="tabpanel">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Modern, SEO-First Stack</h3>
-                              <p>Next.js and React with TypeScript for performance, stability, and developer speed.</p>
-                              <p>Server-side rendering, structured data, and accessibility to improve rankings.</p>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <img src="/assets/img/services/services-4.webp" alt="Web Development" className="img-fluid rounded" loading="lazy" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className={`tab-pane fade ${activeTab === 'process' ? 'show active' : ''}`} id="tab-process" role="tabpanel">
+                      <div
+                        className={`tab-pane fade ${
+                          activeTab === "process" ? "show active" : ""
+                        }`}
+                        id="tab-process"
+                        role="tabpanel"
+                      >
                         <div className="process-timeline">
-                          <div className="timeline-item"><div className="timeline-marker">01</div><div className="timeline-content"><h4>Architecture</h4><p>Design for reliability, scale, and developer velocity.</p></div></div>
-                          <div className="timeline-item"><div className="timeline-marker">02</div><div className="timeline-content"><h4>Implementation</h4><p>Clean, typed code with automated checks.</p></div></div>
-                          <div className="timeline-item"><div className="timeline-marker">03</div><div className="timeline-content"><h4>Optimization</h4><p>Performance, security, and SEO audits.</p></div></div>
-                          <div className="timeline-item"><div className="timeline-marker">04</div><div className="timeline-content"><h4>Launch</h4><p>Zero-downtime deploys and monitoring.</p></div></div>
+                          {PROCESS.map((process, index) => {
+                            return (
+                              <div className="timeline-item" key={process.id}>
+                                <div className="timeline-marker">
+                                  0{index + 1}
+                                </div>
+                                <div className="timeline-content">
+                                  <h4>{process.title}</h4>
+                                  <p>{process.description}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
-                      <div className={`tab-pane fade ${activeTab === 'benefits' ? 'show active' : ''}`} id="tab-benefits" role="tabpanel">
+                      <div
+                        className={`tab-pane fade ${
+                          activeTab === "benefits" ? "show active" : ""
+                        }`}
+                        id="tab-benefits"
+                        role="tabpanel"
+                      >
                         <div className="row g-4">
-                          <div className="col-md-6"><div className="benefit-card"><div className="benefit-icon"><i className="bi bi-speedometer"></i></div><h4>Blazing Fast</h4><p>Core Web Vitals optimized.</p></div></div>
-                          <div className="col-md-6"><div className="benefit-card"><div className="benefit-icon"><i className="bi bi-shield-check"></i></div><h4>Secure</h4><p>Hardened against common threats.</p></div></div>
-                        </div>
-                      </div>
-                      <div className={`tab-pane fade ${activeTab === 'tools' ? 'show active' : ''}`} id="tab-tools" role="tabpanel">
-                        <div className="row g-4" role="list" aria-label="Web development tools and technologies">
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Frontend</h3>
-                              <ul role="list">
-                                <li role="listitem" aria-label="Next.js, React, TypeScript">Next.js · React · TypeScript</li>
-                                <li role="listitem" aria-label="CSS Modules, Tailwind, Bootstrap">CSS Modules · Tailwind · Bootstrap</li>
-                                <li role="listitem" aria-label="Accessibility, Lighthouse, Web Vitals">A11y · Lighthouse · Web Vitals</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="content-block">
-                              <h3>Backend & DevOps</h3>
-                              <ul role="list">
-                                <li role="listitem" aria-label="Node.js, Express, PostgreSQL, Prisma">Node.js · Express · PostgreSQL · Prisma</li>
-                                <li role="listitem" aria-label="AWS, Vercel, Docker, CI CD">AWS · Vercel · Docker · CI/CD</li>
-                                <li role="listitem" aria-label="Authentication and monitoring">Auth · Sentry · Observability</li>
-                              </ul>
-                            </div>
-                          </div>
+                          {BENEFITS.map((benefit) => {
+                            return (
+                              <div className="col-md-6" key={benefit.id}>
+                                <div className="benefit-card">
+                                  <div className="benefit-icon">
+                                    <i className={`bi ${benefit.icon}`}></i>
+                                  </div>
+                                  <h4>{benefit.title}</h4>
+                                  <p>{benefit.description}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
@@ -125,11 +273,41 @@ export default function WebDevelopmentPage() {
 
               <div className="col-lg-4 order-lg-2 order-1">
                 <div className="service-sidebar" data-aos="fade-left">
-                  <div className="action-card" data-aos="zoom-in" data-aos-delay="100">
-                    <h3>Build with Confidence</h3>
-                    <p>Schedule a call with our engineering team.</p>
-                    <Link href="/#contact-form" className="btn-primary">Talk to us</Link>
-                    <span className="guarantee"><i className="bi bi-shield-check"></i> 100% Satisfaction Guarantee</span>
+                  <div
+                    className="action-card"
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                  >
+                    <h3>Discuss Your App</h3>
+                    <p>Cut time-to-market with our mobile experts.</p>
+                    <Link href="/#contact-form" className="btn-primary">
+                      Get in touch
+                    </Link>
+                    <span className="guarantee">
+                      <i className="bi bi-shield-check"></i> 100% Satisfaction
+                      Guarantee
+                    </span>
+                  </div>
+
+                  <div
+                    className="service-features-list"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <h4>What We Offer</h4>
+                    <ul>
+                      {SERVICES.map((service) => {
+                        return (
+                          <li key={service.id}>
+                            <i className={`bi ${service.icon}`}></i>
+                            <div>
+                              <h5>{service.title}</h5>
+                              <p>{service.description}</p>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -140,5 +318,3 @@ export default function WebDevelopmentPage() {
     </>
   );
 }
-
-
