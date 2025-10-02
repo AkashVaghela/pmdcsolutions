@@ -133,7 +133,7 @@ export default function WebDevelopmentPage() {
                   <div className="action-card" data-aos="zoom-in" data-aos-delay="100">
                     <h3>Build with Confidence</h3>
                     <p>Schedule a call with our engineering team.</p>
-                    <Link href="#contact" className="btn-primary">Talk to us</Link>
+                    <Link href="/#contact-form" className="btn-primary">Talk to us</Link>
                     <span className="guarantee"><i className="bi bi-shield-check"></i> 100% Satisfaction Guarantee</span>
                   </div>
                 </div>

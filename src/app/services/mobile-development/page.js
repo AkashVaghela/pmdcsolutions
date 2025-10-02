@@ -101,7 +101,7 @@ export default function MobileDevelopmentPage() {
                   <div className="action-card" data-aos="zoom-in" data-aos-delay="100">
                     <h3>Discuss Your App</h3>
                     <p>Cut time-to-market with our mobile experts.</p>
-                    <Link href="#contact" className="btn-primary">Get in touch</Link>
+                    <Link href="/#contact-form" className="btn-primary">Get in touch</Link>
                     <span className="guarantee"><i className="bi bi-shield-check"></i> 100% Satisfaction Guarantee</span>
                   </div>
                 </div>

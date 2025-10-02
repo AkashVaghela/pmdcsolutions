@@ -130,7 +130,7 @@ export default function UiUxDesignPage() {
                   <div className="action-card" data-aos="zoom-in" data-aos-delay="100">
                     <h3>Start Your Project</h3>
                     <p>Get a free consultation with our design team.</p>
-                    <Link href="#contact" className="btn-primary">Schedule Consultation</Link>
+                    <Link href="/#contact-form" className="btn-primary">Schedule Consultation</Link>
                     <span className="guarantee"><i className="bi bi-shield-check"></i> 100% Satisfaction Guarantee</span>
                   </div>
                 </div>
