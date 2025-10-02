@@ -1,17 +1,12 @@
 "use client";
 
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import NavBar from '@/components/navbar.component';
 import { useState } from 'react';
-
-const ThemeInitializer = dynamic(() => import('@/components/theme-initializer.component'), { ssr: false });
 
 export default function MobileDevelopmentPage() {
   const [activeTab, setActiveTab] = useState('overview');
   return (
     <>
-      <NavBar />
       <main className="main" role="main">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.pmdc.solutions/"},{"@type":"ListItem","position":2,"name":"Mobile Development","item":"https://www.pmdc.solutions/services/mobile-development"}] }) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", "name": "Mobile Development", "provider": {"@type":"Organization","name":"PMDC Solutions"}, "serviceType": "iOS and Android app development", "areaServed": "Global", "url": "https://www.pmdc.solutions/services/mobile-development" }) }} />
@@ -110,7 +105,6 @@ export default function MobileDevelopmentPage() {
           </div>
         </section>
       </main>
-      <ThemeInitializer />
     </>
   );
 }

@@ -1,17 +1,12 @@
 "use client";
 
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import NavBar from '@/components/navbar.component';
 import { useState } from 'react';
-
-const ThemeInitializer = dynamic(() => import('@/components/theme-initializer.component'), { ssr: false });
 
 export default function UiUxDesignPage() {
   const [activeTab, setActiveTab] = useState('overview');
   return (
     <>
-      <NavBar />
       <main className="main" role="main">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.pmdc.solutions/"},{"@type":"ListItem","position":2,"name":"UI/UX Design","item":"https://www.pmdc.solutions/services/ui-ux-design"}] }) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", "name": "UI/UX Design", "provider": {"@type":"Organization","name":"PMDC Solutions"}, "serviceType": "User interface and user experience design", "areaServed": "Global", "url": "https://www.pmdc.solutions/services/ui-ux-design" }) }} />
@@ -139,8 +134,6 @@ export default function UiUxDesignPage() {
           </div>
         </section>
       </main>
-
-      <ThemeInitializer />
     </>
   );
 }

@@ -1,17 +1,12 @@
 "use client";
 
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import NavBar from '@/components/navbar.component';
 import { useState } from 'react';
-
-const ThemeInitializer = dynamic(() => import('@/components/theme-initializer.component'), { ssr: false });
 
 export default function WebDevelopmentPage() {
   const [activeTab, setActiveTab] = useState('overview');
   return (
     <>
-      <NavBar />
       <main className="main" role="main">
         <script
           type="application/ld+json"
@@ -142,7 +137,6 @@ export default function WebDevelopmentPage() {
           </div>
         </section>
       </main>
-      <ThemeInitializer />
     </>
   );
 }
