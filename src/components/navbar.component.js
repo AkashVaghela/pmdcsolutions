@@ -28,9 +28,9 @@ const NavBar = () => {
       <div className="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <Link
           href="/"
-          className="logo d-flex align-items-center me-auto me-xl-0"
+          className="logo"
         >
-          <h1 className="sitename">PMDC</h1>
+          <img src='/assets/img/pmdc_logo.png'/>
         </Link>
 
         <nav
@@ -75,9 +75,9 @@ const NavBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            {/* <li>
               <Link href="/#portfolio">Portfolio</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/#about">About Us</Link>
             </li>

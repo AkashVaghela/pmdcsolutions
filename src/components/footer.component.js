@@ -6,8 +6,8 @@ export default function Footer() {
       <div className="container footer-top">
         <div className="row gy-4">
           <div className="col-lg-5 col-md-12 footer-about">
-            <Link href="/" className="logo d-flex align-items-center">
-              <span className="sitename">PMDC Solutions</span>
+            <Link href="/" className="logo">
+              <img src='/assets/img/pmdc_logo.png'/>
             </Link>
             <p>
               PMDC Solutions is a full-stack digital agency delivering modern
@@ -15,14 +15,14 @@ export default function Footer() {
               enterprises turn ideas into scalable products with robust
               technology and user-first design.
             </p>
-            <div className="social-links d-flex mt-4">
+            {/* <div className="social-links d-flex mt-4">
               <Link href="">
                 <i className="bi bi-linkedin"></i>
               </Link>
               <Link href="">
                 <i className="bi bi-twitter-x"></i>
               </Link>
-            </div>
+            </div> */}
           </div>
 
           <div className="col-lg-2 col-6 footer-links">
@@ -31,9 +31,9 @@ export default function Footer() {
               <li>
                 <Link href="/#services">Services</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/#portfolio">Portfolio</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/#about">About Us</Link>
               </li>
@@ -71,25 +71,45 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <div className="col-lg-3 col-md-12 footer-contact text-md-start">
             <h4>Contact Us</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p>United States</p>
+            <p>
+              <a
+                href="https://www.google.com/maps?q=503+Saffron+Tower,+Fatehgunj,+Vadodara"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-decoration-none hover:underline"
+              >
+                503 Saffron Tower<br />
+                Fatehgunj, Vadodara
+              </a>
+            </p>
             <p className="mt-4">
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span>
+              <strong>Phone:</strong>{" "}
+              <a
+                href="tel:+919537632077"
+                className="text-decoration-none hover:underline"
+              >
+                +91 95376 32077
+              </a>
             </p>
             <p>
-              <strong>Email:</strong> <span>info@example.com</span>
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:admin@pmdcsolutions.org"
+                className="text-decoration-none hover:underline"
+              >
+                admin@pmdcsolutions.org
+              </a>
             </p>
           </div>
         </div>
       </div>
 
       <div className="container copyright text-center mt-4">
-        <p>
-          © <span>Copyright</span>{" "}
-          <strong className="px-1 sitename">PMDC Solutions</strong>{" "}
+        <p className="m-0">
+          © <span>{new Date().getFullYear()}</span>{" "}
+          <strong className="px-1 sitename">PMDC Solutions</strong>
           <span>All Rights Reserved</span>
         </p>
       </div>

@@ -139,10 +139,10 @@ export default function Home() {
                     alt="About Image"
                     loading="lazy"
                   />
-                  <div className="experience-badge">
+                  {/* <div className="experience-badge">
                     <span className="years">20+</span>
                     <span className="text">Years of Expertise</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -532,7 +532,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="portfolio" className="portfolio section">
+        {/* <section id="portfolio" className="portfolio section">
           <div className="container section-title" data-aos="fade-up">
             <h2>Portfolio</h2>
             <div>
@@ -555,7 +555,7 @@ export default function Home() {
               <PortfolioGrid />
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section id="steps" className="steps section">
           <div className="container section-title" data-aos="fade-up">
@@ -1231,7 +1231,15 @@ export default function Home() {
                   </div>
                   <div className="info-content">
                     <h4>Our Address</h4>
-                    <p>1842 Maple Avenue, Portland, Oregon 97204</p>
+                    <a
+                      href="https://www.google.com/maps?q=503+Saffron+Tower,+Fatehgunj,+Vadodara"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-decoration-none hover:underline"
+                    >
+                      503 Saffron Tower<br />
+                      Fatehgunj, Vadodara
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1243,8 +1251,12 @@ export default function Home() {
                   </div>
                   <div className="info-content">
                     <h4>Email Address</h4>
-                    <p>info@example.com</p>
-                    <p>contact@example.com</p>
+                    <a
+                      href="mailto:admin@pmdcsolutions.org"
+                      className="text-decoration-none hover:underline"
+                    >
+                      admin@pmdcsolutions.org
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1256,8 +1268,7 @@ export default function Home() {
                   </div>
                   <div className="info-content">
                     <h4>Hours of Operation</h4>
-                    <p>Sunday-Fri: 9 AM - 6 PM</p>
-                    <p>Saturday: 9 AM - 4 PM</p>
+                    <p>Monday - Friday: 9 AM - 6 PM</p>
                   </div>
                 </div>
               </div>
